@@ -1,4 +1,4 @@
-package com.ayudantia.demo.Entidades;
+package com.example.demo.Entidades;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -15,70 +15,114 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="TORNEO")
+@Table(name="Consulta")
 @Entity
-public class Torneo {
+public class Consulta {
     @Id
-    @GenericGenerator(name="incrementtorneo", strategy="increment")
-    @GeneratedValue(generator="incrementtorneo")
-    @Column(name="id_torneo")
-    private long id;
+    @GenericGenerator(name="incrementconsulta", strategy="increment")
+    @GeneratedValue(generator="incrementconsulta")
+    @Column(name="id_consulta")
+    long id_consulta;
 
-    @Column(name="nombre")
-    String nombre;
+    @Column(name="id_tecnico")
+    long idTecnico;
 
-    @Column(name="pais")
-    String pais;
+    @Column(name="id_cliente")
+    long idCliente;
 
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(
-        name = "participantes",
-        joinColumns = { @JoinColumn(name="id_torneo")},
-        inverseJoinColumns = { @JoinColumn(name="id_equipo")}
-    )
-    private Set<Equipo> equipos = new HashSet<>();
+    @Column(name="titulo")
+    String titulo;
 
-    public Torneo(){
+    @Column(name="descripcion")
+    String descripcion;
+
+    @Column(name="categoria")
+    String categoria;
+
+    @OneToMany(mapped = "consulta")
+    private Set<Tecnico> tecnico;
+
+    @OneToMany(mapped = "consulta")
+    private Set<Cliente> cliente;
+    
+    public Consulta(){
 
     }
 
-    public Torneo(long id, String nombre, String pais, Set<Equipo> equipos) {
-        this.id = id;
-        this.nombre = nombre;
-        this.pais = pais;
-        this.equipos = equipos;
+    public Consulta(long id_consulta, long idTecnico, long idCliente, String titulo, String descripcion, String categoria, Set<Tecnico> tecnico, Set<Cliente> cliente) {
+        this.id_consulta = id_consulta;
+        this.idTecnico = idTecnico;
+        this.idCliente = idCliente;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.categoria = categoria;
+        this.tecnico = tecnico;
+        this.cliente = cliente;
+
     }
 
-    public long getId() {
-        return this.id;
+    public long getId_Consulta(){
+        return this.id_consulta;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_Consulta(long id_consulta) {
+        this.id_consulta = id_consulta;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public long getId_Tecnico(){
+        return this.idTecnico;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setId_Tecnico(long idTecnico) {
+        this.idTecnico = idTecnico;
     }
 
-    public String getPais() {
-        return this.pais;
+    public long getId_Cliente(){
+        return this.idCliente;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setId_Cliente(long idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public Set<Equipo> getEquipos() {
-        return this.equipos;
+    public String getTitulo(){
+        return this.titulo;
     }
 
-    public void setEquipos(Set<Equipo> equipos) {
-        this.equipos = equipos;
+    public String setTitulo(String titulo){
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion(){
+        return this.descripcion;
+    }
+
+    public String setDescripcion(String descripcion){
+        this.descripcion = descripcion;
+    }
+
+    public String getCategoria(){
+        return this.categoria;
+    }
+
+    public String setCategoria(String categoria){
+        this.categoria = categoria;
+    }
+
+    public Set<Tecnico> getTecnico() {
+        return this.tecnico;
+    }
+
+    public void setTecnico(Set<Tecnico> tecnico) {
+        this.tecnico = tecnico;
+    }
+
+    public Set<Cliente> getCliente() {
+        return this.cliente;
+    }
+
+    public void setCliente(Set<Cliente> cliente) {
+        this.cliente = cliente;
     }
 
 }

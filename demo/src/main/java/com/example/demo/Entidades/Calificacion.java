@@ -1,4 +1,4 @@
-package com.ayudantia.demo.Entidades;
+package com.example.demo.Entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,91 +10,81 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="Partido")
+@Table(name="Calificacion")
 @Entity
-public class Partido{
+public class Calificacion{
     @Id
-    @GenericGenerator(name="incrementpartido", strategy="increment")
-    @GeneratedValue(generator="incrementpartido")
-    @Column(name="id_partido")
-    long id;
+    @GenericGenerator(name="incrementcalificacion", strategy="increment")
+    @GeneratedValue(generator="incrementcalificacion")
+    @Column(name="id_calificacion")
+    long id_calificacion;
 
-    @Column(name="id_torneo")
-    long idtorneo;
+    @Column(name="id_tecnico")
+    long idTecnico;
 
-    @ManyToOne
-    @JoinColumn(name = "id_equipoA", nullable = true)
-    private Equipo equipoA;
+    @Column(name="id_cliente")
+    long idCliente;
 
-    @ManyToOne
-    @JoinColumn(name = "id_equipoB", nullable = true)
-    private Equipo equipoB;
+    @Column(name="nota")
+    int nota;
 
-    @Column(name="scoreA")
-    long scoreA;
+    @OneToMany(mapped = "Calificacion")
+    private Set<Tecnico> tecnico;
 
-    @Column(name="scoreB")
-    long scoreB;
+    @OneToMany(mapped = "Calificacion")
+    private Set<Cliente> cliente;
 
-    Partido (){
+    Calificacion(){
 
     }
 
-    public Partido(long id, long idtorneo, Equipo equipoA, Equipo equipoB, long scoreA, long scoreB) {
-        this.id = id;
-        this.idtorneo = idtorneo;
-        this.equipoA = equipoA;
-        this.equipoB = equipoB;
-        this.scoreA = scoreA;
-        this.scoreB = scoreB;
+    public Calificacion(long id_calificacion, long idTecnico,long idCliente,int nota) {
+        this.id_calificacion = id_calificacion;
+        this.idTecnico = idTecnico;
+        this.idCliente = idCliente;
+        this.nota = nota;
     }
 
-    public long getId() {
-        return this.id;
+    public long getId_Tecnico(){
+        return this.idTecnico;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_Tecnico(long idTecnico) {
+        this.idTecnico = idTecnico;
     }
 
-    public long getIdtorneo() {
-        return this.idtorneo;
+    public long getId_Cliente(){
+        return this.idCliente;
     }
 
-    public void setIdtorneo(long idtorneo) {
-        this.idtorneo = idtorneo;
+    public void setId_Cliente(long idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public Equipo getEquipoA() {
-        return this.equipoA;
+    public int getNota(){
+        return this.nota;
     }
 
-    public void setEquipoA(Equipo equipoA) {
-        this.equipoA = equipoA;
+    public void setNota(int nota) {
+        this.nota = nota;
     }
 
-    public Equipo getEquipoB() {
-        return this.equipoB;
+    public Set<Tecnico> getTecnico() {
+        return this.tecnico;
     }
 
-    public void setEquipoB(Equipo equipoB) {
-        this.equipoB = equipoB;
+    public void setTecnico(Set<Tecnico> tecnico) {
+        this.tecnico = tecnico;
     }
 
-    public long getScoreA() {
-        return this.scoreA;
+    public Set<Cliente> getCliente() {
+        return this.cliente;
     }
 
-    public void setScoreA(long scoreA) {
-        this.scoreA = scoreA;
+    public void setCliente(Set<Cliente> cliente) {
+        this.cliente = cliente;
     }
 
-    public long getScoreB() {
-        return this.scoreB;
-    }
-
-    public void setScoreB(long scoreB) {
-        this.scoreB = scoreB;
-    }
+}
 
 }

@@ -1,4 +1,4 @@
-package com.ayudantia.demo.Entidades;
+package com.example.demo.Entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,91 +10,105 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="Partido")
+@Table(name="Pago")
 @Entity
-public class Partido{
+public class Pago{
     @Id
-    @GenericGenerator(name="incrementpartido", strategy="increment")
-    @GeneratedValue(generator="incrementpartido")
-    @Column(name="id_partido")
-    long id;
+    @GenericGenerator(name="incrementpago", strategy="increment")
+    @GeneratedValue(generator="incrementpago")
+    @Column(name="id_pago")
+    long id_pago;
 
-    @Column(name="id_torneo")
-    long idtorneo;
+    @Column(name="id_tecnico")
+    long idTecnico;
 
-    @ManyToOne
-    @JoinColumn(name = "id_equipoA", nullable = true)
-    private Equipo equipoA;
+    @Column(name="id_cliente")
+    long idCliente;
 
-    @ManyToOne
-    @JoinColumn(name = "id_equipoB", nullable = true)
-    private Equipo equipoB;
+    @Column(name="id_consulta")
+    long idConsulta;
 
-    @Column(name="scoreA")
-    long scoreA;
+    @Column(name="monto")
+    int monto;
 
-    @Column(name="scoreB")
-    long scoreB;
+    @OneToMany(mapped = "pago")
+    private Set<Tecnico> tecnico;
 
-    Partido (){
+    @OneToMany(mapped = "pago")
+    private Set<Cliente> cliente;
+
+    @OneToMany(mapped = "pago")
+    private Set<Consulta> consulta;
+
+    Pago(){
 
     }
 
-    public Partido(long id, long idtorneo, Equipo equipoA, Equipo equipoB, long scoreA, long scoreB) {
-        this.id = id;
-        this.idtorneo = idtorneo;
-        this.equipoA = equipoA;
-        this.equipoB = equipoB;
-        this.scoreA = scoreA;
-        this.scoreB = scoreB;
+    public Pago(long id_pago,long id_tecnico,long id_cliente,long id_consulta,int monto,Set<Tecnico> tecnico,Set<Cliente> cliente,Set<Consulta> consulta) {
+        this.id_pago = id_pago;
+        this.idTecnico = id_tecnico
+        this.idCliente= id_cliente
+        this.idConsulta = id_consulta;
+        this.monto = monto;
+        this.tecnico = tecnico;
+        this.cliente = cliente;
+        this.consulta = consulta;
     }
 
-    public long getId() {
-        return this.id;
+    public long getId_Pago() {
+        return this.id_pago;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId_Pago(long id_pago) {
+        this.id_pago = id_pago;
     }
 
-    public long getIdtorneo() {
-        return this.idtorneo;
+    public long getId_Tecnico(){
+        return this.idTecnico;
     }
 
-    public void setIdtorneo(long idtorneo) {
-        this.idtorneo = idtorneo;
+    public void setId_Tecnico(long idTecnico) {
+        this.idTecnico = idTecnico;
     }
 
-    public Equipo getEquipoA() {
-        return this.equipoA;
+    public long getId_Cliente(){
+        return this.idCliente;
     }
 
-    public void setEquipoA(Equipo equipoA) {
-        this.equipoA = equipoA;
+    public void setId_Cliente(long idCliente) {
+        this.idCliente = idCliente;
     }
 
-    public Equipo getEquipoB() {
-        return this.equipoB;
+    public long getId_Consulta(){
+        return this.idConsulta;
     }
 
-    public void setEquipoB(Equipo equipoB) {
-        this.equipoB = equipoB;
+    public void setId_Consulta(long idConsulta) {
+        this.idConsulta = idConsulta;
     }
 
-    public long getScoreA() {
-        return this.scoreA;
+    public Set<Tecnico> getTecnico() {
+        return this.tecnico;
     }
 
-    public void setScoreA(long scoreA) {
-        this.scoreA = scoreA;
+    public void setTecnico(Set<Tecnico> tecnico) {
+        this.tecnico = tecnico;
     }
 
-    public long getScoreB() {
-        return this.scoreB;
+    public Set<Cliente> getCliente() {
+        return this.cliente;
     }
 
-    public void setScoreB(long scoreB) {
-        this.scoreB = scoreB;
+    public void setCliente(Set<Cliente> cliente) {
+        this.cliente = cliente;
     }
 
+    public Set<Consulta> getConsulta() {
+        return this.consulta;
+    }
+
+    public void setConsulta(Set<Consulta> consulta) {
+        this.consulta = consulta;
+    }
+    
 }
