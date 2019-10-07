@@ -1,32 +1,33 @@
-package com.ayudantia.demo.Servicios;
+package com.example.demo.Servicios;
 
 import java.util.List;
 
-import com.ayudantia.demo.Entidades.Equipo;
-import com.ayudantia.demo.Repositorios.EquipoRepositorio;
+import com.example.demo.Entidades.Pago;
+import com.example.demo.Repositorios.PagoRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-@Service("servicioequipo")
-public class EquipoServicio{
-    @Autowired
-    @Qualifier("repositorioequipo")
-    private EquipoRepositorio repositorio;
+@Service("serviciopago")
+public class PagoServicio{
 
-    public boolean crear(Equipo equipo){
+    @Autowired
+    @Qualifier("repositoriopago")
+    private PagoRepositorio repositorio;
+
+    public boolean crear(Pago pago){
         try{
-            repositorio.save(equipo);
+            repositorio.save(pago);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public boolean actualizar(Equipo equipo){
+    public boolean actualizar(Pago pago){
         try{
-            repositorio.save(equipo);
+            repositorio.save(pago);
             return true;
         } catch (Exception e){
             return false;
@@ -35,20 +36,19 @@ public class EquipoServicio{
 
     public boolean borrar(long id){
         try{
-            Equipo equipo = repositorio.findById(id);
-            repositorio.delete(equipo);
+            Pago pago = repositorio.findById(id);
+            repositorio.delete(pago);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public Equipo obtenerporId(long id){
+    public Pago obtenerporId(long id){
         return repositorio.findById(id);
     }
 
-    public List<Equipo> obtenerAll(){
+    public List<Pago> obtenerAll(){
         return repositorio.findAll();
     }
-
 }

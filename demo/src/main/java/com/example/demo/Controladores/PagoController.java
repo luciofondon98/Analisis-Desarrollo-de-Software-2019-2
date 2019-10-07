@@ -1,9 +1,9 @@
-package com.ayudantia.demo.Controladores;
+package com.example.demo.Controladores;
 
 import javax.validation.Valid;
 
-import com.ayudantia.demo.Entidades.Partido;
-import com.ayudantia.demo.Servicios.PartidoServicio;
+import com.example.demo.Entidades.Pago;
+import com.example.demo.Servicios.PagoServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,30 +18,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/partido")
-public class PartidoController{
+@RequestMapping("/v1/pago")
+public class PagoController{
     @Autowired
-    @Qualifier("serviciopartido")
-    PartidoServicio servicio;
+    @Qualifier("serviciopago")
+    PagoServicio servicio;
 
-    @GetMapping("/partido")
-    public Partido obtenerPartido(@RequestParam(name="id", required=true) long id){
+    @GetMapping("/pago")
+    public Pago obtenerPago(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/partido")
-    public boolean agregarPartido(@RequestBody @Valid Partido partido){
-        return servicio.crear(partido);
+    @PostMapping("/pago")
+    public boolean agregarPago(@RequestBody @Valid Pago pago){
+        return servicio.crear(pago);
     }
 
-    @PutMapping("/partido")
-    public boolean actualizarPartido(@RequestBody @Valid Partido partido){
-        return servicio.actualizar(partido);
+    @PutMapping("/pago")
+    public boolean actualizarPago(@RequestBody @Valid Pago pago){
+        return servicio.actualizar(pago);
     }
 
-    @DeleteMapping("/partido/{id}")
-    public boolean borrarPartido(@PathVariable("id") long id){
+    @DeleteMapping("/pago/{id}")
+    public boolean borrarPago(@PathVariable("id") long id){
         return servicio.borrar(id);
+    }
+
+    @GetMapping("/getAll")
+    public List<Pago> getAllPago(){
+        return servicio.obtenerAll();
     }
 
 }

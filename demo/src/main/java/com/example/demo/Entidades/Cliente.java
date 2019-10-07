@@ -1,6 +1,4 @@
-package com.ayudantia.demo.Entidades;
-
-import java.sql.Date;
+package com.example.demo.Entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,61 +8,41 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-@Table(name="Jugador")
+@Table(name="Cliente")
 @Entity
-public class Jugador{
+public class Cliente{
     @Id
-    @GenericGenerator(name="incrementjugador", strategy="increment")
-    @GeneratedValue(generator="incrementjugador")
-    @Column(name="id_jugador")
-    long id;
+    @GenericGenerator(name="incrementcliente", strategy="increment")
+    @GeneratedValue(generator="incrementcliente")
+    @Column(name="id_cliente")
+    long id_cliente;
 
-    @Column(name="id_equipo")
-    long equipo;
-
-    @Column(name="nombre")
+    @Column(name="nombre_cliente")
     String nombre;
 
-    @Column(name="apellido")
-    String apellido;
+    @Column(name="correo_cliente")
+    String correo;
 
-    @Column(name="apodo")
-    String apodo;
+    @Column(name="contrasena_cliente")
+    String contrasena;
 
-    @Column(name="pais")
-    String pais;
-
-    @Column(name="nacimiento")
-    Date nacimiento;
-
-    public Jugador(){
+    public Cliente(){
 
     }
 
-    public Jugador(long id, long equipo, String nombre, String apellido, String apodo, String pais, Date nacimiento) {
-        this.id = id;
-        this.equipo = equipo;
+    public Cliente(long id_cliente, String nombre, String correo, String contrasena) {
+        this.id_cliente = id_cliente;
         this.nombre = nombre;
-        this.apellido = apellido;
-        this.apodo = apodo;
-        this.pais = pais;
-        this.nacimiento = nacimiento;
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
 
     public long getId() {
-        return this.id;
+        return this.id_cliente;
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public long getEquipo() {
-        return this.equipo;
-    }
-
-    public void setEquipo(long equipo) {
-        this.equipo = equipo;
+    public void setId(long id_cliente) {
+        this.id_cliente = id_cliente;
     }
 
     public String getNombre() {
@@ -75,37 +53,20 @@ public class Jugador{
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return this.apellido;
+    public String getCorreo() {
+        return this.correo;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public String getApodo() {
-        return this.apodo;
+    public String getContrasena() {
+        return this.contrasena;
     }
 
-    public void setApodo(String apodo) {
-        this.apodo = apodo;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
-
-    public String getPais() {
-        return this.pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
-    public Date getNacimiento() {
-        return this.nacimiento;
-    }
-
-    public void setNacimiento(Date nacimiento) {
-        this.nacimiento = nacimiento;
-    }
-
 
 }

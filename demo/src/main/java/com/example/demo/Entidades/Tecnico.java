@@ -1,24 +1,23 @@
-package com.ayudantia.demo.Entidades;
+package com.example.demo.Entidades;
 
-import java.util.Set;
+/*import java.util.Set;*/
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
 @Table(name="TECNICO")
 @Entity
-public class Equipo{
+public class Tecnico{
     @Id
     @GenericGenerator(name="incrementtecnico", strategy="increment")
     @GeneratedValue(generator="incrementtecnico")
     @Column(name="id_tecnico")
-    long id;
+    long id_tecnico;
 
     @Column(name="nombre_tecnico")
     String nombre;
@@ -29,26 +28,23 @@ public class Equipo{
     @Column(name="contrasena_tecnico")
     String contrasena;
 
-    @OneToMany(mappedBy = "tecnico")
-    private Set<Pago> pago;
-
     public Tecnico(){
 
     }
 
-    public Tecnico(long id, String nombre, String correo, Set<Jugador> jugadores) {
-        this.id = id;
+    public Tecnico(long id, String nombre, String correo, String contrasena) {
+        this.id_tecnico = id;
         this.nombre = nombre;
-        this.pais = pais;
-        this.jugadores = jugadores;
+        this.correo = correo;
+        this.contrasena = contrasena;
     }
 
     public long getId() {
-        return this.id;
+        return this.id_tecnico;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setId(long id_tecnico) {
+        this.id_tecnico = id_tecnico;
     }
 
     public String getNombre() {
@@ -59,20 +55,20 @@ public class Equipo{
         this.nombre = nombre;
     }
 
-    public String getPais() {
-        return this.pais;
+    public String getCorreo() {
+        return this.correo;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public Set<Jugador> getJugadores() {
-        return this.jugadores;
+    public String getContrasena() {
+        return this.contrasena;
     }
 
-    public void setJugadores(Set<Jugador> jugadores) {
-        this.jugadores = jugadores;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
 }

@@ -4,8 +4,8 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import com.example.demo.Entidades.Cliente;
-import com.example.demo.Servicios.ClienteServicio;
+import com.example.demo.Entidades.Tecnico;
+import com.example.demo.Servicios.TecnicoServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -20,35 +20,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/jugador")
-public class JugadorController{
+@RequestMapping("/v1/tecnico")
+public class TecnicoController{
     @Autowired
-    @Qualifier("serviciojugador")
-    JugadorServicio servicio;
+    @Qualifier("serviciotecnico")
+    TecnicoServicio servicio;
 
-    @GetMapping("/jugador")
-    public Jugador obtenerJugador(@RequestParam(name="id", required=true) long id){
+    @GetMapping("/tecnico")
+    public Tecnico obtenerTecnico(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/jugador")
-    public boolean agregarJugador(@RequestBody @Valid Jugador jugador){
-        return servicio.crear(jugador);
+    @PostMapping("/tecnico")
+    public boolean agregarTecnico(@RequestBody @Valid Tecnico tecnico){
+        return servicio.crear(tecnico);
     }
 
-    @PutMapping("/jugador")
-    public boolean actualizarJugador(@RequestBody @Valid Jugador jugador){
-        return servicio.actualizar(jugador);
+    @PutMapping("/tecnico")
+    public boolean actualizarTecnico(@RequestBody @Valid Tecnico tecnico){
+        return servicio.actualizar(tecnico);
     }
 
-    @DeleteMapping("/jugador/{id}")
-    public boolean borrarJugador(@PathVariable("id") long id){
+    @DeleteMapping("/tecnico/{id}")
+    public boolean borrarTecnico(@PathVariable("id") long id){
         return servicio.borrar(id);
     }
 
-    @GetMapping("/equipo")
-    public List<Jugador> obtenerPorEquipo(@RequestParam(name="equipo", required = true) long equipo){
-        return servicio.obtenerByEquipo(equipo);
+    @GetMapping("/getAll")
+    public List<Tecnico> getAllTecnico(){
+        return servicio.obtenerAll();
     }
 
 }

@@ -46,8 +46,8 @@ public class Pago{
 
     public Pago(long id_pago,long id_tecnico,long id_cliente,long id_consulta,int monto,Set<Tecnico> tecnico,Set<Cliente> cliente,Set<Consulta> consulta) {
         this.id_pago = id_pago;
-        this.idTecnico = id_tecnico
-        this.idCliente= id_cliente
+        this.idTecnico = id_tecnico;
+        this.idCliente= id_cliente;
         this.idConsulta = id_consulta;
         this.monto = monto;
         this.tecnico = tecnico;
