@@ -1,10 +1,12 @@
 package com.example.demo.Entidades;
 
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -38,11 +40,13 @@ public class Calificacion{
 
     }
 
-    public Calificacion(long id_calificacion, long idTecnico,long idCliente,int nota) {
+    public Calificacion(long id_calificacion, long idTecnico,long idCliente,int nota, Set<Tecnico> tecnico, Set<Cliente> cliente) {
         this.id_calificacion = id_calificacion;
         this.idTecnico = idTecnico;
         this.idCliente = idCliente;
         this.nota = nota;
+        this.tecnico = tecnico;
+        this.cliente = cliente;
     }
 
     public long getId_Tecnico(){
