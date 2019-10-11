@@ -1,11 +1,11 @@
-package com.ayudantia.demo.Controladores;
+package com.example.demo.Controladores;
 
 import java.util.List;
 
 import javax.validation.Valid;
 
-import com.ayudantia.demo.Entidades.Torneo;
-import com.ayudantia.demo.Servicios.TorneoServicio;
+import com.example.demo.Entidades.Consulta;
+import com.example.demo.Servicios.ConsultaServicio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -21,40 +21,40 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/v1/torneo")
-public class TorneoController{
+@RequestMapping("/v1/consulta")
+public class ConsultaController{
     @Autowired
-    @Qualifier("serviciotorneo")
-    TorneoServicio servicio;
+    @Qualifier("servicioconsulta")
+    ConsultaServicio servicio;
 
-    @GetMapping("/torneo")
-    public Torneo obtenerTorneo(@RequestParam(name="id", required=true) long id){
+    @GetMapping("/consulta")
+    public Consulta obtenerConsulta(@RequestParam(name="id_consulta", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
-    @PostMapping("/torneo")
-    public boolean agregarTorneo(@RequestBody @Valid Torneo torneo){
-        return servicio.crear(torneo);
+    @PostMapping("/consulta")
+    public boolean agregarTorneo(@RequestBody @Valid Consulta consulta){
+        return servicio.crear(consulta);
     }
 
-    @PutMapping("/torneo")
-    public boolean actualizarTorneo(@RequestBody @Valid Torneo torneo){
-        return servicio.actualizar(torneo);
+    @PutMapping("/consulta")
+    public boolean actualizarTorneo(@RequestBody @Valid Consulta consulta){
+        return servicio.actualizar(consulta);
     }
 
-    @DeleteMapping("/torneo/{id}")
-    public boolean borrarTorneo(@PathVariable("id") long id){
+    @DeleteMapping("/consulta/{id_consulta}")
+    public boolean borrarTorneo(@PathVariable("id_consulta") long id){
         return servicio.borrar(id);
     }
 
     @GetMapping("/getAll")
-    public List<Torneo> getAllTorneo(Pageable pageable){
+    public List<Consulta> getAllTorneo(Pageable pageable){
         return servicio.obtenerAll(pageable);
     }
 
-    @GetMapping("/getPais")
+    /*@GetMapping("/getPais")
     public List<Torneo> getporPais(@RequestParam(name="pais", required = true) String pais){
         return servicio.obtenerporPais(pais);
-    }
+    }*/
 
 }

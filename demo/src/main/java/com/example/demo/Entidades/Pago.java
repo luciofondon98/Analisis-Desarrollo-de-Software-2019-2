@@ -6,8 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -33,13 +33,13 @@ public class Pago{
     @Column(name="monto")
     int monto;
 
-    @OneToMany(mapped = "pago")
+    //@OneToMany(mapped = "pago")
     private Set<Tecnico> tecnico;
 
-    @OneToMany(mapped = "pago")
+    //@OneToMany(mapped = "pago")
     private Set<Cliente> cliente;
 
-    @OneToMany(mapped = "pago")
+    //@OneToMany(mapped = "pago")
     private Set<Consulta> consulta;
 
     Pago(){

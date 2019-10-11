@@ -5,9 +5,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.OneToMany;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -30,10 +30,10 @@ public class Calificacion{
     @Column(name="nota")
     int nota;
 
-    @OneToMany(mapped = "Calificacion")
+    //@OneToMany(mapped = "Calificacion")
     private Set<Tecnico> tecnico;
 
-    @OneToMany(mapped = "Calificacion")
+    //@OneToMany(mapped = "Calificacion")
     private Set<Cliente> cliente;
 
     Calificacion(){
@@ -88,7 +88,5 @@ public class Calificacion{
     public void setCliente(Set<Cliente> cliente) {
         this.cliente = cliente;
     }
-
-}
 
 }

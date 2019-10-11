@@ -1,16 +1,16 @@
 package com.example.demo.Entidades;
 
-import java.util.HashSet;
+//import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.JoinTable;
+//import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -39,10 +39,10 @@ public class Consulta {
     @Column(name="categoria")
     String categoria;
 
-    @OneToMany(mapped = "consulta")
+    //@OneToMany(mapped = "consulta")
     private Set<Tecnico> tecnico;
 
-    @OneToMany(mapped = "consulta")
+    //@OneToMany(mapped = "consulta")
     private Set<Cliente> cliente;
     
     public Consulta(){
@@ -89,7 +89,7 @@ public class Consulta {
         return this.titulo;
     }
 
-    public String setTitulo(String titulo){
+    public void setTitulo(String titulo){
         this.titulo = titulo;
     }
 
@@ -97,7 +97,7 @@ public class Consulta {
         return this.descripcion;
     }
 
-    public String setDescripcion(String descripcion){
+    public void setDescripcion(String descripcion){
         this.descripcion = descripcion;
     }
 
@@ -105,7 +105,7 @@ public class Consulta {
         return this.categoria;
     }
 
-    public String setCategoria(String categoria){
+    public void setCategoria(String categoria){
         this.categoria = categoria;
     }
 

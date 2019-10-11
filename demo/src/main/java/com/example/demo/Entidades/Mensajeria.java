@@ -1,14 +1,14 @@
 package com.example.demo.Entidades;
-
 import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.print.DocFlavor.STRING;
+//import javax.print.DocFlavor.STRING;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -30,10 +30,10 @@ public class Mensajeria{
     @Column(name="mensaje")
     String mensaje;
 
-    @OneToMany(mapped = "Mensajeria")
+    //@OneToMany(mapped = "Mensajeria")
     private Set<Tecnico> tecnico;
 
-    @OneToMany(mapped = "Mensajeria")
+    //@OneToMany(mapped = "Mensajeria")
     private Set<Cliente> cliente;
     
     Mensajeria(){

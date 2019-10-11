@@ -1,33 +1,33 @@
-package com.ayudantia.demo.Servicios;
+package com.example.demo.Servicios;
 
 import java.util.List;
 
-import com.ayudantia.demo.Entidades.Torneo;
-import com.ayudantia.demo.Repositorios.TorneoRepositorio;
+import com.example.demo.Entidades.Consulta;
+import com.example.demo.Repositorios.ConsultaRepositorio;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-@Service("serviciotorneo")
-public class TorneoServicio{
+@Service("servicioconsulta")
+public class ConsultaServicio{
     @Autowired
-    @Qualifier("repositoriotorneo")
-    private TorneoRepositorio repositorio;
+    @Qualifier("repositorioconsulta")
+    private ConsultaRepositorio repositorio;
 
-    public boolean crear(Torneo torneo){
+    public boolean crear(Consulta consulta){
         try{
-            repositorio.save(torneo);
+            repositorio.save(consulta);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public boolean actualizar(Torneo torneo){
+    public boolean actualizar(Consulta consulta){
         try{
-            repositorio.save(torneo);
+            repositorio.save(consulta);
             return true;
         } catch (Exception e){
             return false;
@@ -36,23 +36,23 @@ public class TorneoServicio{
 
     public boolean borrar(long id){
         try{
-            Torneo torneo = repositorio.findById(id);
-            repositorio.delete(torneo);
+            Consulta consulta = repositorio.findById(id);
+            repositorio.delete(consulta);
             return true;
         } catch (Exception e){
             return false;
         }
     }
 
-    public Torneo obtenerporId(long id){
+    public Consulta obtenerporId(long id){
         return repositorio.findById(id);
     }
 
-    public List<Torneo> obtenerAll(Pageable pageable){
+    public List<Consulta> obtenerAll(Pageable pageable){
         return repositorio.findAll(pageable).getContent();
     }
 
-    public List<Torneo> obtenerporPais(String pais){
+    /*public List<Torneo> obtenerporPais(String pais){
         return repositorio.findByPais(pais);
-    }
+    }*/
 }
