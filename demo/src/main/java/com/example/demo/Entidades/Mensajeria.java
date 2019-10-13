@@ -19,7 +19,7 @@ public class Mensajeria{
     @GenericGenerator(name="incrementmensajeria", strategy="increment")
     @GeneratedValue(generator="incrementmensajeria")
     @Column(name="id_mensajeria")
-    long id_mensajeria;
+    long id;
 
     @Column(name="id_tecnico")
     long idTecnico;
@@ -29,30 +29,24 @@ public class Mensajeria{
 
     @Column(name="mensaje")
     String mensaje;
-
-    //@OneToMany(mapped = "Mensajeria")
-    private Set<Tecnico> tecnico;
-
-    //@OneToMany(mapped = "Mensajeria")
-    private Set<Cliente> cliente;
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id_mensajeria, long idTecnico, long idCliente, String mensaje,Set<Tecnico> tecnico, Set<Cliente> cliente){
-        this.id_mensajeria = id_mensajeria;
+    public Mensajeria(long id, long idTecnico, long idCliente, String mensaje){
+        this.id = id;
         this.idTecnico = idTecnico;
         this.idCliente = idCliente;
         this.mensaje = mensaje;
     }
 
     public long getId_Mensajeria() {
-        return this.id_mensajeria;
+        return this.id;
     }
 
-    public void setId_Mensajeria(long id_mensajeria) {
-        this.id_mensajeria = id_mensajeria;
+    public void setId_Mensajeria(long id) {
+        this.id = id;
     }
 
     public long getId_Tecnico(){
@@ -77,22 +71,6 @@ public class Mensajeria{
 
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
-    }
-
-    public Set<Tecnico> getTecnico() {
-        return this.tecnico;
-    }
-
-    public void setTecnico(Set<Tecnico> tecnico) {
-        this.tecnico = tecnico;
-    }
-
-    public Set<Cliente> getCliente() {
-        return this.cliente;
-    }
-
-    public void setCliente(Set<Cliente> cliente) {
-        this.cliente = cliente;
     }
 
 }

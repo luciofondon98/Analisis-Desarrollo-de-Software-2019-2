@@ -19,7 +19,7 @@ public class Calificacion{
     @GenericGenerator(name="incrementcalificacion", strategy="increment")
     @GeneratedValue(generator="incrementcalificacion")
     @Column(name="id_calificacion")
-    long id_calificacion;
+    long id;
 
     @Column(name="id_tecnico")
     long idTecnico;
@@ -30,23 +30,24 @@ public class Calificacion{
     @Column(name="nota")
     int nota;
 
-    //@OneToMany(mapped = "Calificacion")
-    private Set<Tecnico> tecnico;
-
-    //@OneToMany(mapped = "Calificacion")
-    private Set<Cliente> cliente;
 
     Calificacion(){
 
     }
 
-    public Calificacion(long id_calificacion, long idTecnico,long idCliente,int nota, Set<Tecnico> tecnico, Set<Cliente> cliente) {
-        this.id_calificacion = id_calificacion;
+    public Calificacion(long id, long idTecnico,long idCliente,int nota) {
+        this.id = id;
         this.idTecnico = idTecnico;
         this.idCliente = idCliente;
         this.nota = nota;
-        this.tecnico = tecnico;
-        this.cliente = cliente;
+    }
+
+    public long getId_Calificacion(){
+        return this.id;
+    }
+
+    public void setId_Calificacion(long id) {
+        this.id = id;
     }
 
     public long getId_Tecnico(){
@@ -71,22 +72,6 @@ public class Calificacion{
 
     public void setNota(int nota) {
         this.nota = nota;
-    }
-
-    public Set<Tecnico> getTecnico() {
-        return this.tecnico;
-    }
-
-    public void setTecnico(Set<Tecnico> tecnico) {
-        this.tecnico = tecnico;
-    }
-
-    public Set<Cliente> getCliente() {
-        return this.cliente;
-    }
-
-    public void setCliente(Set<Cliente> cliente) {
-        this.cliente = cliente;
     }
 
 }

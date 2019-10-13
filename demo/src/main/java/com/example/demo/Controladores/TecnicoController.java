@@ -26,6 +26,7 @@ public class TecnicoController{
     @Qualifier("serviciotecnico")
     TecnicoServicio servicio;
 
+
     @GetMapping("/tecnico")
     public Tecnico obtenerTecnico(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);

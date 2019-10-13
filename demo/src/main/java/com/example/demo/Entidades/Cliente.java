@@ -1,5 +1,6 @@
 package com.example.demo.Entidades;
-
+import java.util.Set;
+import javax.persistence.OneToMany;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +16,7 @@ public class Cliente{
     @GenericGenerator(name="incrementcliente", strategy="increment")
     @GeneratedValue(generator="incrementcliente")
     @Column(name="id_cliente")
-    long id_cliente;
+    long id;
 
     @Column(name="nombre_cliente")
     String nombre;
@@ -26,23 +27,39 @@ public class Cliente{
     @Column(name="contrasena_cliente")
     String contrasena;
 
+    @OneToMany(mappedBy="cliente")
+    private Set<Pago> pagos;
+
+    @OneToMany(mappedBy="cliente")
+    private Set<Consulta> consultas;
+
+    /*@OneToMany(mappedBy="cliente")
+    private Set<Mensajeria> mensajerias;
+
+    @OneToMany(mappedBy="cliente")
+    private Set<Calificacion> calificaciones;*/
+    
     public Cliente(){
 
     }
 
-    public Cliente(long id_cliente, String nombre, String correo, String contrasena) {
-        this.id_cliente = id_cliente;
+    public Cliente(long id, String nombre, String correo, String contrasena, Set<Pago> pagos, Set<Consulta> consultas/*, Set<Calificacion> calificaciones,Set<Mensajeria> mensajerias*/) {
+        this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasena = contrasena;
+        this.pagos = pagos;
+        this.consultas = consultas;
+        //this.calificaciones = calificaciones;
+        //this.mensajerias = mensajerias;
     }
 
     public long getId() {
-        return this.id_cliente;
+        return this.id;
     }
 
-    public void setId(long id_cliente) {
-        this.id_cliente = id_cliente;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getNombre() {
@@ -69,4 +86,36 @@ public class Cliente{
         this.contrasena = contrasena;
     }
 
+    
+    public Set<Pago> getPago() {
+        return this.pagos;
+    }
+
+    public void setPago(Set<Pago> pagos) {
+        this.pagos = pagos;
+    }
+    
+    public Set<Consulta> getConsulta() {
+        return this.consultas;
+    }
+    
+    public void setConsulta(Set<Consulta> consultas) {
+        this.consultas = consultas;
+    }
+    
+    /*public Set<Mensajeria> getMensajeria() {
+        return this.mensajerias;
+    }
+    
+    public void setMensajeria(Set<Mensajeria> mensajerias) {
+        this.mensajerias = mensajerias;
+    }
+    
+    public Set<Calificacion> getCalificacion() {
+        return this.calificaciones;
+    }
+
+    public void setCalificacion(Set<Calificacion> calificaciones) {
+        this.calificaciones = calificaciones;
+    }*/
 }

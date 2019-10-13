@@ -22,13 +22,13 @@ public class Consulta {
     @GenericGenerator(name="incrementconsulta", strategy="increment")
     @GeneratedValue(generator="incrementconsulta")
     @Column(name="id_consulta")
-    long id_consulta;
+    long id;
 
     @Column(name="id_tecnico")
-    long idTecnico;
+    long tecnico;
 
     @Column(name="id_cliente")
-    long idCliente;
+    long cliente;
 
     @Column(name="titulo")
     String titulo;
@@ -38,51 +38,42 @@ public class Consulta {
 
     @Column(name="categoria")
     String categoria;
-
-    //@OneToMany(mapped = "consulta")
-    private Set<Tecnico> tecnico;
-
-    //@OneToMany(mapped = "consulta")
-    private Set<Cliente> cliente;
     
     public Consulta(){
 
     }
 
-    public Consulta(long id_consulta, long idTecnico, long idCliente, String titulo, String descripcion, String categoria, Set<Tecnico> tecnico, Set<Cliente> cliente) {
-        this.id_consulta = id_consulta;
-        this.idTecnico = idTecnico;
-        this.idCliente = idCliente;
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria) {
+        this.id = id;
+        this.tecnico = tecnico;
+        this.cliente = cliente;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.categoria = categoria;
-        this.tecnico = tecnico;
-        this.cliente = cliente;
-
     }
 
     public long getId_Consulta(){
-        return this.id_consulta;
+        return this.id;
     }
 
-    public void setId_Consulta(long id_consulta) {
-        this.id_consulta = id_consulta;
+    public void setId_Consulta(long id) {
+        this.id = id;
     }
 
     public long getId_Tecnico(){
-        return this.idTecnico;
+        return this.tecnico;
     }
 
-    public void setId_Tecnico(long idTecnico) {
-        this.idTecnico = idTecnico;
+    public void setId_Tecnico(long tecnico) {
+        this.tecnico = tecnico;
     }
 
     public long getId_Cliente(){
-        return this.idCliente;
+        return this.cliente;
     }
 
-    public void setId_Cliente(long idCliente) {
-        this.idCliente = idCliente;
+    public void setId_Cliente(long cliente) {
+        this.cliente = cliente;
     }
 
     public String getTitulo(){
@@ -108,21 +99,4 @@ public class Consulta {
     public void setCategoria(String categoria){
         this.categoria = categoria;
     }
-
-    public Set<Tecnico> getTecnico() {
-        return this.tecnico;
-    }
-
-    public void setTecnico(Set<Tecnico> tecnico) {
-        this.tecnico = tecnico;
-    }
-
-    public Set<Cliente> getCliente() {
-        return this.cliente;
-    }
-
-    public void setCliente(Set<Cliente> cliente) {
-        this.cliente = cliente;
-    }
-
 }
