@@ -1,15 +1,15 @@
-# Hola
+# LOAP
 
-1. [Contexto](#context)
+1. [Contexto](#integrant)
 2. [Ejecución](#comand)
 3. [Consideraciones](#consider)
-4. [Detalles API](#api)
-5. [Contacto](#contact)
+4. [Contacto](#contact)
 
-<a name="context"></a>
-## 1. Contexto:
-
-![Imgur](https://i.imgur.com/xccLgx9.png)
+<a name="integrant"></a>
+## 1. Integrantes:
+-Rodrigo Cayazaya
+-Lucio Fondon
+-Francisco Reyes
 
 <a name="comand"></a>
 ## 2. Ejecución:
@@ -18,11 +18,13 @@
 
 <a name="consider"></a>
 ## 3. Consideraciones:
-- Se esta ejecutando en el puerto `8000`
-
-<a name="api"></a>
-## 4. Detalles API:
+- Se esta ejecutando en el puerto `8000`.
+- Se debe crear la base de datos llamada "proyecto" de forma manual.
+- Se debe ejecutar tablas.sql dentro de la base de datos.
+- Dentro de trabajo/demo/src/main/resources/application.properties se deben colocar la conexión a la bd.
 
 <a name="contact"></a>
-## 5. Contacto:
-- Sebastian Godínez: sebastian.godinez@sansano.usm.cl
+## 4. Correos:
+-Rodrigo Cayazaya: rodrigo.cayazaya@sansano.usm.cl
+-Lucio Fondon: lucio.fondon@sansano.usm.cl
+-Francisco Reyes: francisco.reyesja@sansano.usm.cl
