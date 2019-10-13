@@ -1,9 +1,9 @@
 # LOAP
 
-1. [Contexto](#integrant)
+1. [Integrantes](#integrant)
 2. [Ejecución](#comand)
 3. [Consideraciones](#consider)
-4. [Contacto](#contact)
+4. [Correos](#contact)
 
 <a name="integrant"></a>
 ## 1. Integrantes:
