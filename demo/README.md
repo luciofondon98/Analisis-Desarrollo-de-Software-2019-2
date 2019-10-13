@@ -7,9 +7,9 @@
 
 <a name="integrant"></a>
 ## 1. Integrantes:
--Rodrigo Cayazaya
--Lucio Fondon
--Francisco Reyes
+- Rodrigo Cayazaya
+- Lucio Fondon
+- Francisco Reyes
 
 <a name="comand"></a>
 ## 2. Ejecución:
@@ -25,6 +25,6 @@
 
 <a name="contact"></a>
 ## 4. Correos:
--Rodrigo Cayazaya: rodrigo.cayazaya@sansano.usm.cl
--Lucio Fondon: lucio.fondon@sansano.usm.cl
--Francisco Reyes: francisco.reyesja@sansano.usm.cl
+- Rodrigo Cayazaya: rodrigo.cayazaya@sansano.usm.cl
+- Lucio Fondon: lucio.fondon@sansano.usm.cl
+- Francisco Reyes: francisco.reyesja@sansano.usm.cl
