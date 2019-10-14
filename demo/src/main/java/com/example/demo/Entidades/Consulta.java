@@ -52,27 +52,27 @@ public class Consulta {
         this.categoria = categoria;
     }
 
-    public long getId_Consulta(){
+    public long getId(){
         return this.id;
     }
 
-    public void setId_Consulta(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public long getId_Tecnico(){
+    public long getTecnico(){
         return this.tecnico;
     }
 
-    public void setId_Tecnico(long tecnico) {
+    public void setTecnico(long tecnico) {
         this.tecnico = tecnico;
     }
 
-    public long getId_Cliente(){
+    public long getCliente(){
         return this.cliente;
     }
 
-    public void setId_Cliente(long cliente) {
+    public void setCliente(long cliente) {
         this.cliente = cliente;
     }
 

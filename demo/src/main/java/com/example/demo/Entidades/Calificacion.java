@@ -42,27 +42,27 @@ public class Calificacion{
         this.nota = nota;
     }
 
-    public long getId_Calificacion(){
+    public long getId(){
         return this.id;
     }
 
-    public void setId_Calificacion(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public long getId_Tecnico(){
+    public long getTecnico(){
         return this.idTecnico;
     }
 
-    public void setId_Tecnico(long idTecnico) {
+    public void setTecnico(long idTecnico) {
         this.idTecnico = idTecnico;
     }
 
-    public long getId_Cliente(){
+    public long getCliente(){
         return this.idCliente;
     }
 
-    public void setId_Cliente(long idCliente) {
+    public void setCliente(long idCliente) {
         this.idCliente = idCliente;
     }
 

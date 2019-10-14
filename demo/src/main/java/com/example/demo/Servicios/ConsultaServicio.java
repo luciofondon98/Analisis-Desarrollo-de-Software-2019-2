@@ -48,8 +48,8 @@ public class ConsultaServicio{
         return repositorio.findById(id);
     }
 
-    public List<Consulta> obtenerAll(Pageable pageable){
-        return repositorio.findAll(pageable).getContent();
+    public List<Consulta> obtenerAll(){
+        return repositorio.findAll();
     }
 
     /*public List<Torneo> obtenerporPais(String pais){

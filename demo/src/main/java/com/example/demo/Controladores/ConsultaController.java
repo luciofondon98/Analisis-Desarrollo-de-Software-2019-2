@@ -28,29 +28,30 @@ public class ConsultaController{
     ConsultaServicio servicio;
 
     @GetMapping("/consulta")
-    public Consulta obtenerConsulta(@RequestParam(name="id_consulta", required=true) long id){
+    public Consulta obtenerConsulta(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
     @PostMapping("/consulta")
-    public boolean agregarTorneo(@RequestBody @Valid Consulta consulta){
+    public boolean agregarConsulta(@RequestBody @Valid Consulta consulta){
         return servicio.crear(consulta);
     }
 
     @PutMapping("/consulta")
-    public boolean actualizarTorneo(@RequestBody @Valid Consulta consulta){
+    public boolean actualizarConsulta(@RequestBody @Valid Consulta consulta){
         return servicio.actualizar(consulta);
     }
 
-    @DeleteMapping("/consulta/{id_consulta}")
-    public boolean borrarTorneo(@PathVariable("id_consulta") long id){
+    @DeleteMapping("/consulta/{id}")
+    public boolean borrarConsulta(@PathVariable("id") long id){
         return servicio.borrar(id);
     }
 
     @GetMapping("/getAll")
-    public List<Consulta> getAllTorneo(Pageable pageable){
-        return servicio.obtenerAll(pageable);
+    public List<Consulta> getAllConsulta(){
+        return servicio.obtenerAll();
     }
+
 
     /*@GetMapping("/getPais")
     public List<Torneo> getporPais(@RequestParam(name="pais", required = true) String pais){

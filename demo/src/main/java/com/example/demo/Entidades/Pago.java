@@ -45,35 +45,35 @@ public class Pago{
         this.monto = monto;
     }
 
-    public long getId_Pago() {
+    public long getId() {
         return this.id;
     }
 
-    public void setId_Pago(long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public long getId_Tecnico(){
+    public long getTecnico(){
         return this.tecnico;
     }
 
-    public void setId_Tecnico(long tecnico) {
+    public void setTecnico(long tecnico) {
         this.tecnico = tecnico;
     }
 
-    public long getId_Cliente(){
+    public long getCliente(){
         return this.cliente;
     }
 
-    public void setId_Cliente(long cliente) {
+    public void setCliente(long cliente) {
         this.cliente = cliente;
     }
 
-    public long getId_Consulta(){
+    public long getConsulta(){
         return this.idConsulta;
     }
 
-    public void setId_Consulta(long idConsulta) {
+    public void setConsulta(long idConsulta) {
         this.idConsulta = idConsulta;
     }
 }

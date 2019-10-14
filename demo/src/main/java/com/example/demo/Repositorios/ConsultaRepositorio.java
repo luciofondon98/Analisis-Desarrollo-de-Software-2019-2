@@ -1,7 +1,7 @@
 package com.example.demo.Repositorios;
 
 import java.io.Serializable;
-//import java.util.List; por ahora no es necesario
+import java.util.List;
 
 import com.example.demo.Entidades.Consulta;
 
@@ -16,11 +16,6 @@ public interface ConsultaRepositorio extends JpaRepository<Consulta, Serializabl
 
     public abstract Consulta findById(long id);
 
-    //public abstract List<Consulta> findByPais(String pais);
-    /* comento lo anterior porque no estoy seguro
-        de si es necesario hacer busquedas por ciertos atributos
-        por el momento */ 
-
-    public abstract Page<Consulta> findAll(Pageable pageable);
+    public abstract List<Consulta> findAll();
 
 }

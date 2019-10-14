@@ -27,7 +27,7 @@ public class PagoController{
     PagoServicio servicio;
 
     @GetMapping("/pago")
-    public Pago obtenerPago(@RequestParam(name="id_pago", required=true) long id){
+    public Pago obtenerPago(@RequestParam(name="id", required=true) long id){
         return servicio.obtenerporId(id);
     }
 
@@ -42,7 +42,7 @@ public class PagoController{
     }
 
     @DeleteMapping("/pago/{id}")
-    public boolean borrarPago(@PathVariable("id_pago") long id){
+    public boolean borrarPago(@PathVariable("id") long id){
         return servicio.borrar(id);
     }
 
