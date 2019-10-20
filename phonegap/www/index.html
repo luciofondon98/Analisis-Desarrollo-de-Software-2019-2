@@ -34,7 +34,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Ingrese un E-mail válido: ex@abc.xyz">
-						<input class="input100" type="text" name="email" placeholder="E-mail">
+						<input class="input100" type="text" placeholder="E-mail" id="email_usuario">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-envelope"></span>
@@ -42,7 +42,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input m-b-16" data-validate = "Contraseña es requerida">
-						<input class="input100" type="password" name="pass" placeholder="Contraseña">
+						<input class="input100" type="password" placeholder="Contraseña" id="contrasena_usuario">
 						<span class="focus-input100"></span>
 						<span class="symbol-input100">
 							<span class="lnr lnr-lock"></span>
@@ -57,9 +57,9 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-25">
-						<button class="login100-form-btn">
+						<div class="login100-form-btn" id="boton">
 							 Ingresar
-						</button>
+						</div>
 					</div>
 
 					<div class="text-center w-full p-t-100">
@@ -90,6 +90,59 @@
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
 
+
+	<script>
+		var contador = 0;
+		$("#boton").click(function IniciarCliente() {
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:8000/v1/cliente/getAll",
+	                success: function(data){
+						console.log("si");
+						for(let i = 0 ; i < data.length ; i++){
+							let pass = document.getElementById("contrasena_usuario");
+							let correo = document.getElementById("email_usuario")
+							if (data[i].contrasena == pass.value){
+								if(data[i].correo == correo.value){
+									alert("Cliente Iniciado");
+									alert(data[i].nombre);
+									contador++;
+								}
+							}
+						}
+	                },
+	                failure: function() {
+	                    console.log("No");
+	                }
+				});
+			});
+
+		$("#boton").click(function IniciarTecnico() {
+				$.ajax({
+					type: "GET",
+					url: "http://localhost:8000/v1/tecnico/getAll",
+	                success: function(data){
+						console.log("si");
+						for(let i = 0 ; i < data.length ; i++){
+							let pass = document.getElementById("contrasena_usuario");
+							let correo = document.getElementById("email_usuario")
+							if (data[i].contrasena == pass.value){
+								if(data[i].correo == correo.value){
+									alert("Tecnico Iniciado");
+									alert(data[i].nombre);
+									contador++;
+								}
+							}
+						}
+						if(contador == 0) alert("Usuario no registrado");
+	                },
+	                failure: function() {
+	                    console.log("No");
+	                }
+				});
+			});
+
+	</script>
 
 
 </body>
