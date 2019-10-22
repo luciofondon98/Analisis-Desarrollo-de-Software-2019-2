@@ -22,8 +22,72 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+
 </head>
+
+<section id="inicio" style="display:none;">
+	<nav class="navbar navbar-default" role="navigation">
+			<!-- El logotipo y el icono que despliega el menú se agrupan
+				para mostrarlos mejor en los dispositivos móviles -->
+			<div class="navbar-header">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar">
+						Loap
+					</span>
+			</div>
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<button class="navbar-brand" id="botoninicio">Inicio</button>
+				</div>
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<button class="navbar-brand" id="botonformulario">Hacer Consulta</button>
+				</div>
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Perfil</a>
+				</div>
+
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Desplegar navegación</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">Chat</a>
+				</div>
+
+		</nav>
+</section>
+
 <body>
+
 <section id="login">
 	<div class="limiter">
 		<div class="container-login100">
@@ -57,7 +121,7 @@
 					</div>
 
 					<div class="container-login100-form-btn p-t-25">
-						<div class="login100-form-btn" id="boton">
+						<div class="login100-form-btn" id="botoningresar">
 							 Ingresar
 						</div>
 					</div>
@@ -77,67 +141,34 @@
 	</div>
 </section>
 
-<section id="inicio" style="display:none;">
-	<nav class="navbar navbar-default" role="navigation">
-			<!-- El logotipo y el icono que despliega el menú se agrupan
-				para mostrarlos mejor en los dispositivos móviles -->
-			<div class="navbar-header">
-				<span class="sr-only">Desplegar navegación</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar">
-						Loap
-					</span>
-			</div>
-
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Desplegar navegación</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="inicio.html">Inicio</a>
-				</div>
-
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Desplegar navegación</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="formulario.html">Hacer Consulta</a>
-				</div>
-
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Desplegar navegación</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Perfil</a>
-				</div>
-
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-ex1-collapse">
-				<span class="sr-only">Desplegar navegación</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="navbar-brand" href="#">Chat</a>
-				</div>
-
-		</nav>
+<section id="formulario" style="display:none;">
+	<form>
+		<div class="form-group">
+			<label for="problema">Nombre del problema</label>
+			<input type="text" class="form-control" id="problema" placeholder="Ingrese problema">
+		</div>
+		<div class="form-group">
+			<label for="categoria">Seleccione Categoría</label>
+			<select class="form-control" id="categoria">
+			<option>categoria 1</option>
+			<option>categoria 2</option>
+			<option>categoria 3</option>
+			<option>categoria 4</option>
+			<option>categoria 5</option>
+			</select>
+		</div>
+		<div class="form-group">
+				<label for="descripcionProblema">Describa el problema</label>
+				<textarea class="form-control" id="descripcionProblema" rows="10"></textarea>
+				</div> 
+			<button class="button" >
+					<div class="btn btn-outline-primary" id="botonconsulta">
+						Mandar consulta
+					</div>
+			</button>    
+                         
+    </form>
 </section>
-
 
 
 <!--===============================================================================================-->
@@ -154,7 +185,7 @@
 
 	<script>
 		var idcliente = 0;
-		$("#boton").click(function IniciarCliente() {
+		$("#botoningresar").click(function IniciarCliente() {
 				$.ajax({
 					type: "GET",
 					url: "http://localhost:8000/v1/cliente/getAll",
@@ -180,6 +211,25 @@
 	                }
 				});
 			});
+		
+		$("#botoninicio").click(function volverinicio() {
+			$("#login").hide();
+			$("#inicio").show();
+			$("#formulario").hide();
+		});
+
+		$("#botonconsulta").click(function volverinicio() {
+			$("#login").hide();
+			$("#inicio").show();
+			$("#formulario").hide();
+		});
+
+		$("#botonformulario").click(function volverinicio() {
+			$("#login").hide();
+			$("#inicio").show();
+			$("#formulario").show();
+		});
+
 		/*
 		$("#boton").click(function IniciarTecnico() {
 				$.ajax({
