@@ -161,11 +161,11 @@
 				<label for="descripcionProblema">Describa el problema</label>
 				<textarea class="form-control" id="descripcionProblema" rows="10"></textarea>
 				</div> 
-			<button class="button" >
+			<div class="button" >
 					<div class="btn btn-outline-primary" id="botonconsulta">
 						Mandar consulta
 					</div>
-			</button>    
+				</div>
                          
     </form>
 </section>
@@ -212,19 +212,37 @@
 				});
 			});
 		
-		$("#botoninicio").click(function volverinicio() {
+		$("#botoninicio").click(function volverInicio() {
 			$("#login").hide();
 			$("#inicio").show();
 			$("#formulario").hide();
 		});
 
-		$("#botonconsulta").click(function volverinicio() {
-			$("#login").hide();
-			$("#inicio").show();
-			$("#formulario").hide();
+		$("#botonconsulta").click(function realizarConsulta() {
+			let descrip = document.getElementById("descripcionProblema");
+			let proble = document.getElementById("problema");
+			let categ = document.getElementById("categoria");
+			$.ajax({				
+					type: "POST",
+					url: "http://localhost:8000/v1/consulta/consulta",
+					
+					data: JSON.stringify({"tecnico": 1,"cliente": idcliente,"titulo": proble.value,
+					"descripcion": descrip.value,"categoria": categ.value}),
+				    contentType: "application/json",
+				    dataType: "json",
+	                success: function(data){
+						console.log("si");
+						$("#login").hide();
+						$("#inicio").show();
+						$("#formulario").hide();
+	                },
+	                failure: function() {
+	                    console.log("No");
+	                }
+				});
 		});
-
-		$("#botonformulario").click(function volverinicio() {
+		
+		$("#botonformulario").click(function mostrarformulario() {
 			$("#login").hide();
 			$("#inicio").show();
 			$("#formulario").show();
