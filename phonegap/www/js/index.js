@@ -9,8 +9,6 @@ $(document).ready(function() {
                 console.log("si");
                 let pass = document.getElementById("contrasena_usuario");
                 let correo = document.getElementById("email_usuario");
-                console.log(pass);
-                console.log(correo);
                 for (let i = 0; i < data.length; i++){ 
                     if (data[i].contrasena == pass.value){
                         if(data[i].correo == correo.value){
@@ -24,10 +22,6 @@ $(document).ready(function() {
                 else window.location.href = "/inicio.html";
             },
             error: function() {
-                let pass = document.getElementById("contrasena_usuario");
-                let correo = document.getElementById("email_usuario");
-                console.log(pass.value);
-                console.log(correo.value);
                 console.log("No se ha podido obtener la información");
             }
         });
