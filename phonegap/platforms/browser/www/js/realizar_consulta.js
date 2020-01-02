@@ -13,7 +13,7 @@ $(document).ready(function(){
                 dataType: "json",
                 success: function(data){
                     console.log("si");
-                    window.location.href = "/inicio.html"
+                    window.location.href = "/inicio_cliente.html"
                 },
                 failure: function() {
                     alert("error")

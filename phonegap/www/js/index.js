@@ -1,10 +1,24 @@
 var idCliente = 0;
+var url_inicio = "";
+var url_api = "";
+
 $(document).ready(function() {
+    
     $("#botoningresar").click(function (e) {
+        if(tipo_usuario.value=="Usuario"){
+            url_api = "http://localhost:8000/v1/cliente/getAll";
+            url_inicio = "/inicio_cliente.html"
+        } 
+        
+        else{
+            url_api = "http://localhost:8000/v1/tecnico/getAll";
+            url_inicio = "/inicio_tecnico.html"
+        
+        }
         e.preventDefault();
         $.ajax({
             type: "GET",
-            url: "http://localhost:8000/v1/cliente/getAll",
+            url: url_api,
             success: function(data) {
                 console.log("si");
                 let pass = document.getElementById("contrasena_usuario");
@@ -12,6 +26,7 @@ $(document).ready(function() {
                 for (let i = 0; i < data.length; i++){ 
                     if (data[i].contrasena == pass.value){
                         if(data[i].correo == correo.value){
+                            console.log(data[i].id)
                             idCliente = data[i].id;
                         }
                     }              
@@ -19,7 +34,7 @@ $(document).ready(function() {
                 if(idCliente == 0) {
                     alert("Cliente no registrado");
                 }
-                else window.location.href = "/inicio.html";
+                else window.location.href = url_inicio;
             },
             error: function() {
                 console.log("No se ha podido obtener la información");
