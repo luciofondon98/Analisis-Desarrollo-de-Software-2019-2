@@ -1,7 +1,4 @@
 $(document).ready(function() {
-    $("#mostrarconsultas").click(function (e) {
-        window.location.href = "/consultas.html";
-        e.preventDefault();
         $.ajax({				
             type: "GET",
             url: "http://localhost:8000/v1/consulta/getAll",
@@ -11,7 +8,7 @@ $(document).ready(function() {
                     $("#consultas").append('                                                     \
                     <div class="card" style="width: 18rem;">                                                       \
                         <div class="card-body">                                              \
-                            <h5 class="card-title">Consulta '+data[i].titulo+'Hecha por el usuario de ID'+data[i].cliente+'</h5>         \
+                            <h5 class="card-title">Consulta '+data[i].titulo+' Hecha por el usuario de ID '+data[i].cliente+'</h5>         \
                             <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
                             <p class="card-text">Descripción: '+ data[i].descripcion +'</p>    \
                             <a href="#" class="card-link">Card link</a>                            \
@@ -25,5 +22,5 @@ $(document).ready(function() {
                 console.log("No se ha podido obtener la información");
             }
         });
-    });
-  });
+});
+
