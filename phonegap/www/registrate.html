@@ -23,11 +23,12 @@
             <div class="login">
                 <div class="form-group">
                     <form method="post">    
-                        <input type="text" placeholder="Nombre" class="form-control">  
-                        <input type="text" placeholder="E-mail" class="form-control">  
-                        <input type="password" placeholder="Contraseña" class="form-control">
+                        <input type="text" placeholder="¿Usuario o Tecnico?" class="form-control" id="tipo_usuario">
+                        <input type="text" placeholder="Nombre" class="form-control" id="nombre_registro">  
+                        <input type="text" placeholder="E-mail" class="form-control" id="email_registro">  
+                        <input type="password" placeholder="Contraseña" class="form-control" id="pass_registro">
                         <br>
-                        <input type="submit" value="Registrarse" class="form-control">
+                        <input type="submit" value="Registrarse" class="form-control" id="botonregistrar">
                         <br>
 				        <a class="btn btn-primary text-light" href="index.html" role="button">¿Ya tienes cuenta? Entra ahora!</a>
                    </form>       
@@ -36,9 +37,12 @@
        </div>
 
        <div class="fixed-bottom text-center bg-dark text-white">LOAP 2019 ©</div>
-    
+       
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>    
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="/js/registrate.js"></script>
+    
     </body>
 
 </html>

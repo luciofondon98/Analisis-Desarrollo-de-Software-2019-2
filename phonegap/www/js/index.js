@@ -3,14 +3,20 @@ var url_inicio = "";
 var url_api = "";
 
 $(document).ready(function() {
-    
     $("#botoningresar").click(function (e) {
+
+        let tipo_usuario = document.getElementById("tipo_usuario");
+        console.log(tipo_usuario.value);
         if(tipo_usuario.value=="Usuario"){
+            console.log("si");
+
             url_api = "http://localhost:8000/v1/cliente/getAll";
             url_inicio = "/inicio_cliente.html"
         } 
         
         else{
+            console.log("si");
+
             url_api = "http://localhost:8000/v1/tecnico/getAll";
             url_inicio = "/inicio_tecnico.html"
         

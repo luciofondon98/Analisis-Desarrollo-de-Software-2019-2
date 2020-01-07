@@ -11,7 +11,7 @@ $(document).ready(function(){
                 "descripcion": descrip.value,"categoria": categ.value}),
                 contentType: "application/json",
                 dataType: "json",
-                success: function(data){
+                success: function(){
                     console.log("si");
                     window.location.href = "/inicio_cliente.html"
                 },
