@@ -13,7 +13,7 @@ $(document).ready(function() {
         
         else{
             console.log("tec");      
-            registrarTecnico(nombre_registro,email_registro,pass_registro)
+            registrarTecnico(nombre_registro.value,email_registro.value,pass_registro.value)
         }
     });
   });
@@ -44,7 +44,7 @@ $(document).ready(function() {
     $.ajax({				
         type: "POST",
         url: "http://localhost:8000/v1/tecnico/tecnico",
-        data: JSON.stringify({"nombre": nombre_registro,"correo": email_registro.value,"contrasena":pass_registro.value,}),
+        data: JSON.stringify({"nombre": nombre_registro,"correo": email_registro,"contrasena":pass_registro}),
         contentType: "application/json",
         dataType: "json",
         success: function(){
