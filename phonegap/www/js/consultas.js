@@ -31,8 +31,8 @@ $(document).ready(function() {
 function myFunction(id) { // Declare a function
     //console.log(id);
     window.localStorage.setItem("token_consulta", id);
-    $("#consultas").append('                                                     \
-    <a href="chat.html" class="btn btn-success text-light">Confirmar</a>                            \
+    $("#titulo").append('                                                     \
+    <a href="chat.html" class="btn btn-warning text-dark">¿Confirmar consulta?</a>                            \
     ');    
 
   }

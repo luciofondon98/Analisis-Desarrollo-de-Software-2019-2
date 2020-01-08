@@ -16,11 +16,6 @@ public interface ConsultaRepositorio extends JpaRepository<Consulta, Serializabl
 
     public abstract Consulta findById(long id);
 
-<<<<<<< HEAD
-=======
-    //public abstract Consulta findById_Cliente(long cliente);
-
->>>>>>> 2359cebc88b39f1c66913c32c0d43295dfb83efa
     public abstract List<Consulta> findAll();
 
 }

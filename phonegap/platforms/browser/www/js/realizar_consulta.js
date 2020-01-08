@@ -8,7 +8,7 @@ $(document).ready(function(){
         $.ajax({				
                 type: "POST",
                 url: "http://localhost:8000/v1/consulta/consulta",
-                data: JSON.stringify({"tecnico": 2,"cliente": id ,"titulo": proble.value,
+                data: JSON.stringify({"tecnico": -1,"cliente": id ,"titulo": proble.value,
                 "descripcion": descrip.value,"categoria": categ.value}),
                 contentType: "application/json",
                 dataType: "json",

@@ -1,4 +1,5 @@
 var id = 0;
+var nombre = "";
 
 $(document).ready(function() {
     $("#botoningresar").click(function (e) {
@@ -30,6 +31,7 @@ $(document).ready(function() {
                     if(data[i].correo == email_usuario){
                         console.log(data[i].id)
                         id = data[i].id;
+                        nombre = data[i].nombre;
                         window.localStorage.setItem("token", id);
                     }
                 }              

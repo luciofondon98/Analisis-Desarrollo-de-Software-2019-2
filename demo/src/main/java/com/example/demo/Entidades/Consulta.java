@@ -42,6 +42,9 @@ public class Consulta {
     @Column(name="categoria")
     String categoria;
 
+    @Column(name="estado")
+    String estado;
+
     @OneToOne(mappedBy= "consulta" ,cascade = CascadeType.ALL)
     private Mensajeria mensajeria;
 
@@ -51,7 +54,7 @@ public class Consulta {
 
     }
 
-    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria ,Mensajeria mensajeria) {
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria ,Mensajeria mensajeria, String estado) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -59,6 +62,7 @@ public class Consulta {
         this.descripcion = descripcion;
         this.categoria = categoria;
         this.mensajeria = mensajeria;
+        this.estado = estado;
     }
 
     public long getId(){
@@ -109,11 +113,11 @@ public class Consulta {
         this.categoria = categoria;
     }
 
-    public Mensajeria getMensajeria(){
-        return this.mensajeria;
+    public String getEstado(){
+        return this.estado;
     }
 
-    public void setMensajeria(Mensajeria mensajeria){
-        this.mensajeria = mensajeria;
+    public void setEstado(String estado){
+        this.estado=estado;
     }
 }
