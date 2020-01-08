@@ -22,10 +22,10 @@ public class Calificacion{
     long id;
 
     @Column(name="id_tecnico")
-    long idTecnico;
+    long tecnico;
 
     @Column(name="id_cliente")
-    long idCliente;
+    long cliente;
 
     @Column(name="nota")
     int nota;
@@ -35,10 +35,10 @@ public class Calificacion{
 
     }
 
-    public Calificacion(long id, long idTecnico,long idCliente,int nota) {
+    public Calificacion(long id, long tecnico,long cliente,int nota) {
         this.id = id;
-        this.idTecnico = idTecnico;
-        this.idCliente = idCliente;
+        this.tecnico = tecnico;
+        this.cliente = cliente;
         this.nota = nota;
     }
 
@@ -51,19 +51,19 @@ public class Calificacion{
     }
 
     public long getTecnico(){
-        return this.idTecnico;
+        return this.tecnico;
     }
 
-    public void setTecnico(long idTecnico) {
-        this.idTecnico = idTecnico;
+    public void setTecnico(long tecnico) {
+        this.tecnico = tecnico;
     }
 
     public long getCliente(){
-        return this.idCliente;
+        return this.cliente;
     }
 
-    public void setCliente(long idCliente) {
-        this.idCliente = idCliente;
+    public void setCliente(long cliente) {
+        this.cliente = cliente;
     }
 
     public int getNota(){

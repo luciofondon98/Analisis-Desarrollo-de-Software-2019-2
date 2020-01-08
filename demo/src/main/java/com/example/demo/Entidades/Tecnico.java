@@ -33,25 +33,25 @@ public class Tecnico{
     @OneToMany(mappedBy="tecnico")
     private Set<Consulta> consultas;
     
-    /*@OneToMany(mappedBy="tecnico")
+    @OneToMany(mappedBy="tecnico")
     private Set<Calificacion> calificaciones;
     
     @OneToMany(mappedBy="tecnico")
-    private Set<Mensajeria> mensajerias;*/
+    private Set<Mensajeria> mensajerias;
     
     public Tecnico(){
 
     }
 
-    public Tecnico(long id, String nombre, String correo, String contrasena, Set<Pago> pagos, Set<Consulta> consultas/*,Set<Mensajeria> mensajerias, Set<Calificacion> calificaciones*/) {
+    public Tecnico(long id, String nombre, String correo, String contrasena, Set<Pago> pagos, Set<Consulta> consultas,Set<Mensajeria> mensajerias, Set<Calificacion> calificaciones) {
         this.id = id;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasena = contrasena;
         this.pagos = pagos;
         this.consultas = consultas;
-        //this.mensajerias = mensajerias;
-        //this.calificaciones = calificaciones;
+        this.mensajerias = mensajerias;
+        this.calificaciones = calificaciones;
     }
 
     public long getId() {
@@ -103,7 +103,7 @@ public class Tecnico{
         this.consultas = consultas;
     }
     
-    /*public Set<Mensajeria> getMensajeria() {
+    public Set<Mensajeria> getMensajeria() {
         return this.mensajerias;
     }
     
@@ -117,5 +117,5 @@ public class Tecnico{
 
     public void setCalificacion(Set<Calificacion> calificaciones) {
         this.calificaciones = calificaciones;
-    }*/
+    }
 }
