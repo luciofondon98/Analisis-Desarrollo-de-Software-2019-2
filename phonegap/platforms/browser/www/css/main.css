@@ -25,6 +25,14 @@ header{
 input{
     margin-top: 10px;
 }
+
+#chat{
+    display: grid;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
 .consultas{
     display: flex;
     justify-content: center;
@@ -32,18 +40,13 @@ input{
     
 }
 
-.consultas .card{
-    flex: 1 0 51%;
-    margin: 5px;
-
-    
-}
 #consultas{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     
 }
+
 
 .card{
     flex: 1 0 34%;
