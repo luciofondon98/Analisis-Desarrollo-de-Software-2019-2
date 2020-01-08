@@ -25,7 +25,19 @@ header{
 input{
     margin-top: 10px;
 }
+.consultas{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
 
+.consultas .card{
+    flex: 1 0 51%;
+    margin: 5px;
+
+    
+}
 #consultas{
     display: flex;
     justify-content: center;

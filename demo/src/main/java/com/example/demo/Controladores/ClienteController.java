@@ -27,7 +27,7 @@ public class ClienteController{
     ClienteServicio servicio;
 
     @GetMapping("/cliente")
-    public Cliente obtenerCliente(@RequestParam(name="id", required=true) long id){
+    public Cliente obtenerCliente(@RequestParam(name="id") long id){
         return servicio.obtenerporId(id);
     }
 
