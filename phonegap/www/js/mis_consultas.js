@@ -3,7 +3,7 @@ $(document).ready(function() {
         type: "GET",
         url: "http://localhost:8000/v1/cliente/getAll",
         success: function(data) {
-            let id = window.localStorage.getItem("token")
+            let id = window.localStorage.getItem("token");
             console.log("mis_consultas");
             console.log(id);
             for (let i = 0; i < data.length; i++){   
