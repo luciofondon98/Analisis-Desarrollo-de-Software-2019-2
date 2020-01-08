@@ -3,15 +3,16 @@ package com.example.demo.Entidades;
 //import java.util.HashSet;
 //import java.util.Set;
 
-//import javax.persistence.CascadeType;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 //import javax.persistence.JoinColumn;
 //import javax.persistence.JoinTable;
-//import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.persistence.OneToOne;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -21,6 +22,8 @@ public class Consulta {
     @Id
     @GenericGenerator(name="incrementconsulta", strategy="increment")
     @GeneratedValue(generator="incrementconsulta")
+
+
     @Column(name="id_consulta")
     long id;
 
@@ -38,18 +41,24 @@ public class Consulta {
 
     @Column(name="categoria")
     String categoria;
+
+    @OneToOne(mappedBy= "consulta" ,cascade = CascadeType.ALL)
+    private Mensajeria mensajeria;
+
+
     
     public Consulta(){
 
     }
 
-    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria) {
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria ,Mensajeria mensajeria) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.categoria = categoria;
+        this.mensajeria = mensajeria;
     }
 
     public long getId(){
@@ -98,5 +107,13 @@ public class Consulta {
 
     public void setCategoria(String categoria){
         this.categoria = categoria;
+    }
+
+    public Mensajeria getMensajeria(){
+        return this.mensajeria;
+    }
+
+    public void setMensajeria(Mensajeria mensajeria){
+        this.mensajeria = mensajeria;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.demo.Entidades;
 //import java.util.Set;
+import javax.persistence.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,10 @@ import javax.persistence.Id;
 //import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 //import javax.print.DocFlavor.STRING;
+import javax.persistence.OneToOne;
+import javax.persistence.JoinColumn;
+import javax.persistence.FetchType;
+
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -29,16 +34,23 @@ public class Mensajeria{
 
     @Column(name="mensaje")
     String mensaje;
+   
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_consulta")
+    private Consulta consulta;
+
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id, long tecnico, long cliente, String mensaje){
+    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Consulta consulta){
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.mensaje = mensaje;
+        this.consulta = consulta;
     }
 
     public long getId() {
@@ -71,6 +83,15 @@ public class Mensajeria{
 
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
+    }
+
+    public Consulta getConsulta() {
+        return this.consulta;
+
+    }
+
+    public void setConsulta(Consulta consulta) {
+        this.consulta = consulta;
     }
 
 }
