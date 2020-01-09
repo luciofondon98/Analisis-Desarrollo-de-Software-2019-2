@@ -18,7 +18,8 @@ $(document).ready(function() {
                     contentType: "application/json",
                     dataType: "json",
                     success: function(new_data) {
-                        window.localStorage.setItem("token_consulta", new_data.id);
+                        let h = data.id +1;
+                        window.localStorage.setItem("token_consulta", h);
                         //console.log("se creo la nueva consulta");
                         $.ajax({
                             type: "DELETE",
