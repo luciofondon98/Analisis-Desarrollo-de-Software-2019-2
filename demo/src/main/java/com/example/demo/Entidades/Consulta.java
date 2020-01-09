@@ -1,13 +1,15 @@
 package com.example.demo.Entidades;
 
 //import java.util.HashSet;
-//import java.util.Set;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
 //import javax.persistence.JoinColumn;
 //import javax.persistence.JoinTable;
 import javax.persistence.Table;
@@ -45,24 +47,24 @@ public class Consulta {
     @Column(name="estado")
     String estado;
 
-    @OneToOne(mappedBy= "consulta" ,cascade = CascadeType.ALL)
-    private Mensajeria mensajeria;
-
+    @OneToMany(mappedBy="consulta")
+    private Set<Mensajeria> mensajerias;
+   
 
     
     public Consulta(){
 
     }
 
-    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria ,Mensajeria mensajeria, String estado) {
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria , String estado,Set<Mensajeria> mensajerias) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.categoria = categoria;
-        this.mensajeria = mensajeria;
         this.estado = estado;
+        this.mensajerias = mensajerias;
     }
 
     public long getId(){
@@ -119,5 +121,15 @@ public class Consulta {
 
     public void setEstado(String estado){
         this.estado=estado;
+        
+    }
+
+    public Set<Mensajeria> getMensajeria() {
+        return this.mensajerias;
+    }
+    
+    public void setMensajeria(Set<Mensajeria> mensajerias) {
+        this.mensajerias = mensajerias;
+
     }
 }

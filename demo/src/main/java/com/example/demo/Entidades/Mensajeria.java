@@ -1,4 +1,7 @@
 package com.example.demo.Entidades;
+
+import java.util.Set;
+
 //import java.util.Set;
 import javax.persistence.CascadeType;
 
@@ -8,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 //import javax.persistence.JoinColumn;
 //import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 //import javax.print.DocFlavor.STRING;
 import javax.persistence.OneToOne;
@@ -34,18 +38,16 @@ public class Mensajeria{
 
     @Column(name="mensaje")
     String mensaje;
-   
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_consulta")
-    private Consulta consulta;
+    @Column(name="id_consulta")
+    long consulta;
 
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Consulta consulta){
+    public Mensajeria(long id, long tecnico, long cliente, String mensaje, long consulta){
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -85,13 +87,13 @@ public class Mensajeria{
         this.mensaje = mensaje;
     }
 
-    public Consulta getConsulta() {
+    public long getConsulta(){
         return this.consulta;
-
     }
 
-    public void setConsulta(Consulta consulta) {
+    public void setConsulta(long consulta) {
         this.consulta = consulta;
     }
+
 
 }
