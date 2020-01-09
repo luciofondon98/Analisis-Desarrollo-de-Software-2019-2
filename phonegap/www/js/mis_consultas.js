@@ -4,8 +4,8 @@ $(document).ready(function() {
         url: "http://localhost:8000/v1/cliente/getAll",
         success: function(data) {
             let id = window.localStorage.getItem("token");
-            console.log("mis_consultas");
             //console.log(id);
+            console.log("mis_consultas");
             for (let i = 0; i < data.length; i++){   
                 if (id == data[i].id){
                     console.log(i);
@@ -18,7 +18,7 @@ $(document).ready(function() {
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].consulta[j].categoria +'</h6>    \
                                 <p class="card-text">Descripción: '+ data[i].consulta[j].descripcion +'</p>    \
                                 <a href="#" class="btn btn-success text-light" onclick="myFunction('+data[i].consulta[j].id+')">agarrar id</a>\
-                                <a href="chat.html" id="entrar_chat" class="btn btn-info">Entrar al Chat</a>                        \
+                                <a href="chat_cliente.html" id="entrar_chat" class="btn btn-info">Entrar al Chat</a>                        \
                                 <a href="#" class="btn btn-danger text-light">Eliminar Consulta</a>\
                              </div>\
                         </div>\

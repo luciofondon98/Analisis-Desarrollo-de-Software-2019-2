@@ -41,18 +41,22 @@ public class Mensajeria{
 
     @Column(name="id_consulta")
     Long consulta;
+
+    @Column(name="destinatario")
+    long destinatario;
     
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Long consulta){
+    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Long consulta, long destinatario){
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.mensaje = mensaje;
         this.consulta = consulta;
+        this.destinatario = destinatario;
     }
 
     public long getId() {
@@ -95,5 +99,11 @@ public class Mensajeria{
         this.consulta = consulta;
     }
 
+    public long getDestinatario(){
+        return this.destinatario;
+    }
 
+    public void setDestinatario(long destinatario) {
+        this.destinatario = destinatario;
+    }
 }

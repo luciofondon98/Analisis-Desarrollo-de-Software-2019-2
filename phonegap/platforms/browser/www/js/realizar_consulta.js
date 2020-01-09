@@ -8,8 +8,8 @@ $(document).ready(function(){
         $.ajax({				
                 type: "POST",
                 url: "http://localhost:8000/v1/consulta/consulta",
-                data: JSON.stringify({"tecnico": 4,"cliente": id ,"titulo": proble.value,
-                "descripcion": descrip.value,"categoria": categ.value}), //id 4 es tecnico fantasma
+                data: JSON.stringify({"tecnico": 1,"cliente": id ,"titulo": proble.value,
+                "descripcion": descrip.value,"estado":"nuevo","categoria": categ.value}), //id 1 es tecnico fantasma
                 contentType: "application/json",
                 dataType: "json",
                 success: function(){

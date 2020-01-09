@@ -61,7 +61,7 @@ $(document).ready(function() {
                     if(data[i].correo == email_usuario){
                         console.log(data[i].id)
                         id = data[i].id;
-                        window.localStorage.setItem("token", id);
+                        window.localStorage.setItem("token_tec", id);
 
                     }
                 }              
