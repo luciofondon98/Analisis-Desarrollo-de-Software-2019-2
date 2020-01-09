@@ -43,14 +43,14 @@ public class Mensajeria{
     Long consulta;
 
     @Column(name="destinatario")
-    long destinatario;
+    Long destinatario;
     
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Long consulta, long destinatario){
+    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Long consulta, Long destinatario){
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -99,7 +99,7 @@ public class Mensajeria{
         this.consulta = consulta;
     }
 
-    public long getDestinatario(){
+    public Long getDestinatario(){
         return this.destinatario;
     }
 

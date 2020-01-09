@@ -2,6 +2,9 @@ $(document).ready(function(){
     $("#boton_enviar_mensaje_tecnico").click(function (e) {
         e.preventDefault();
         let id = window.localStorage.getItem("token_tec")
+        let id_consulta = window.localStorage.getItem("token_consulta")
+        let mensaje = document.getElementById("mensaje");
+
         console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa: "+id);
         $.ajax({				
                 type: "POST",
