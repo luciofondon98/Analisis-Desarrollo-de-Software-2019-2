@@ -23,8 +23,13 @@
             <div class="login">
                 <div class="form-group">
                     <form>
-                        <input type="text" placeholder="Indica si eres usuario o técnico" class="form-control" id="tipo_usuario">
-                        <input type="text" placeholder="E-mail" class="form-control" id="email_usuario">  
+                        <div class="form-group">
+                            <label for="categoria">Seleccione tipo</label>
+                            <select class="form-control" id="tipo_usuario">
+                                  <option>Usuario</option>
+                                  <option>Técnico</option>
+                            </select> 
+                       </div>                        <input type="text" placeholder="E-mail" class="form-control" id="email_usuario">  
                         <input type="password" placeholder="Contraseña" class="form-control" id="contrasena_usuario">
                         <br>
                         <input type="submit" value="Ingresar" class="form-control" id="botoningresar">

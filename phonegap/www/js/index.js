@@ -37,7 +37,7 @@ $(document).ready(function() {
                 }              
             }
             if(id == 0) {
-                alert("Cliente no registrado");
+                alert("Usuario no registrado");
             }
             else window.location.href = "/inicio_cliente.html";
         },
