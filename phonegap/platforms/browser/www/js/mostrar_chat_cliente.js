@@ -11,7 +11,7 @@ $(document).ready(function() {
                     $("#chat_cliente").append('                                                     \
                     <div class="card" style="width: 18rem;">                                               \
                         <div class="card-body">                                              \
-                            <h5 class="card-title">'+data[i].cliente+'</h5>        \
+                            <h5 class="card-title">'+data[i].destinatario+'</h5>        \
                             <p class="card-text">Mensaje: '+ data[i].mensaje+'</p>    \                       \
                         </div>                                                               \
                     </div>                                                                   \

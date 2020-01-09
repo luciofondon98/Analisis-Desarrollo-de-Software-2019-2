@@ -35,21 +35,21 @@ $(document).ready(function() {
             }
             console.log("id , tecnico, cliente: "+data.id+data.tecnico+data.cliente);
             for (let i = 0; i < data.mensajeria.length; i++){
-                if(data.mensajeria[i].destinatario == data.cliente){//izq
-                    $("#chat_tecnico").append('                                                     \
+                if(data.mensajeria[i].destinatario == data.cliente){//der
+                    $("#chat_cliente").append('                                                     \
                     <div class="card" style="width: 18rem;">                                               \
                         <div class="card-body">                                              \
-                            <h5 class="card-title">'+data.mensajeria[i].destinatario+'</h5>        \
+                            <h5 class="card-title"> derecha de tecnico para cliente '+data.mensajeria[i].destinatario+'</h5>        \
                             <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
                         </div>                                                               \
                     </div>                                                                   \
                 ');    
                 }
-                else{//der
+                else{//izq
                     $("#chat_tecnico").append('                                                     \
                     <div class="card" style="width: 18rem;">                                               \
                         <div class="card-body">                                              \
-                            <h5 class="card-title">'+data.mensajeria[i].destinatario+'</h5>        \
+                            <h5 class="card-title">izquierda de cliente para tecnico '+data.mensajeria[i].destinatario+'</h5>        \
                             <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
                         </div>                                                               \
                     </div>                                                                   \
