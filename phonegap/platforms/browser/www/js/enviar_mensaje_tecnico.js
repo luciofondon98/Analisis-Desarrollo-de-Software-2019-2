@@ -9,8 +9,8 @@ $(document).ready(function(){
         $.ajax({				
                 type: "POST",
                 url: "http://localhost:8000/v1/mensajeria/mensajeria",
-                data: JSON.stringify({"tecnico": id,"cliente": 1 ,"mensaje": mensaje.value, "destinatario": 1,
-                "consulta": id_consulta}), //id 1 es tecnico fantasma, ESTO CAMBIARLO SE NECESITA EL ID DEL TECNICO
+                data: JSON.stringify({"tecnico": id,"cliente": 1 ,"mensaje": mensaje.value,
+                "consulta": id_consulta, "destinatario": 1}), //id 1 es tecnico fantasma, ESTO CAMBIARLO SE NECESITA EL ID DEL TECNICO
                 contentType: "application/json",
                 dataType: "json",
                 success: function(){
