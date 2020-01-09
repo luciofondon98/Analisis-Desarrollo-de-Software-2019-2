@@ -1,11 +1,12 @@
 $(document).ready(function(){
     $("#boton_enviar_mensaje_tecnico").click(function (e) {
         e.preventDefault();
-        let id = window.localStorage.getItem("token")
+        let id = window.localStorage.getItem("token_tec")
+        console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaa: "+id);
         $.ajax({				
                 type: "POST",
                 url: "http://localhost:8000/v1/mensajeria/mensajeria",
-                data: JSON.stringify({"tecnico": 1,"cliente": id ,"mensaje": mensaje.value,
+                data: JSON.stringify({"tecnico": id,"cliente": 1 ,"mensaje": mensaje.value, "destinatario": 1,
                 "consulta": id_consulta}), //id 1 es tecnico fantasma, ESTO CAMBIARLO SE NECESITA EL ID DEL TECNICO
                 contentType: "application/json",
                 dataType: "json",

@@ -4,7 +4,7 @@ $(document).ready(function() {
             url: "http://localhost:8000/v1/consulta/getAll",
             success: function(data) {
                 console.log("consulta");
-                let id = window.localStorage.getItem("token");
+                let id = window.localStorage.getItem("token_tec");
                 //console.log("id es: "+id);
                 //console.log(data[0].id);
                 for (let i = 0; i < data.length; i++){ 
@@ -30,7 +30,7 @@ $(document).ready(function() {
                                 <h5 class="card-title">Consulta '+data[i].titulo+' Hecha por el usuario de ID '+data[i].cliente+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
                                 <p class="card-text">Descripción: '+ data[i].descripcion +'</p>    \
-                                <a href="chat_tecnico.html" id="entrar_chat" class="btn btn-info">Entrar al Chat</a>                        \
+                                <a href="#" id="entrar_chat" class="btn btn-info" onclick="myFunction2('+data[i].id+')">Entrar al Chat</a>                        \
                                 <a href="#" class="btn btn-danger text-light">Cancelar Consulta</a> \
                             </div>                                                               \
                         </div>                                                                   \
@@ -68,6 +68,12 @@ function myFunction(id) { // Declare a function
     </div>                                                                                                                          \
     </div>                                                                                                                          \
     ');    
+}
+
+function myFunction2(id) { // Declare a function
+    //console.log(id);
+    window.localStorage.setItem("token_consulta", id); 
+    window.location =  "chat_tecnico.html";
 }
 
 
