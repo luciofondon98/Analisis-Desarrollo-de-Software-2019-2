@@ -40,14 +40,14 @@ public class Mensajeria{
     String mensaje;
 
     @Column(name="id_consulta")
-    long consulta;
-
+    Long consulta;
+    
     
     Mensajeria(){
 
     }
 
-    public Mensajeria(long id, long tecnico, long cliente, String mensaje, long consulta){
+    public Mensajeria(long id, long tecnico, long cliente, String mensaje, Long consulta){
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -87,11 +87,11 @@ public class Mensajeria{
         this.mensaje = mensaje;
     }
 
-    public long getConsulta(){
+    public Long getConsulta(){
         return this.consulta;
     }
 
-    public void setConsulta(long consulta) {
+    public void setConsulta(Long consulta) {
         this.consulta = consulta;
     }
 

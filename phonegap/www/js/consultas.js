@@ -15,8 +15,9 @@ $(document).ready(function() {
                             <h5 class="card-title">Consulta '+data[i].titulo+' Hecha por el usuario de ID '+data[i].cliente+'</h5>         \
                             <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
                             <p class="card-text">Descripción: '+ data[i].descripcion +'</p>    \
-                            <a href="#" class="btn btn-success text-light" onclick="myFunction('+data[i].id+')">Aceptar Consulta</a>                            \
-                            <a href="#" class="btn btn-danger text-light">Rechazar Consulta</a>                         \
+                            <a href="#" id= "aceptar_consulta" class="btn btn-success text-light" onclick="myFunction('+data[i].id+')">Aceptar Consulta</a>                            \
+                            <a href="#" class="btn btn-danger text-light">Rechazar Consulta</a> \
+                            <a href="chat.html" id="entrar_chat" class="btn btn-info">Entrar al Chat</a>                        \
                         </div>                                                               \
                     </div>                                                                   \
                 ');    
@@ -31,9 +32,7 @@ $(document).ready(function() {
 function myFunction(id) { // Declare a function
     //console.log(id);
     window.localStorage.setItem("token_consulta", id);
-    $("#titulo").append('                                                     \
-    <a href="chat.html" class="btn btn-warning text-dark">¿Confirmar consulta?</a>                            \
-    ');    
+
 
   }
 
