@@ -37,26 +37,40 @@ $(document).ready(function() {
             console.log("id , tecnico, cliente: "+data.id+data.tecnico+data.cliente);
             for (let i = 0; i < data.mensajeria.length; i++){
                 if(data.mensajeria[i].destinatario == data.cliente){//der
-                    $("#chat_tecnico").append('                                                     \
-                    <div class="card" style="width: 18rem;">                                               \
-                        <div class="card-body">                                              \
-                        <div class=“row”>                                       \
-                                <h5 class="card-title"> derecha de tecnico para cliente '+data.mensajeria[i].destinatario+'</h5>        \
-                                <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
-                            </div>                                                               \
-                        </div>                                      \
-                    </div>                                                                   \
-                ');    
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8000/v1/tecnico/tecnico?id="+data.mensajeria[i].tecnico,
+                        success: function(new_data) {
+                            $("#chat_tecnico").append('                                                     \
+                            <div class="card" style="width: 18rem;">                                               \
+                                <div class="card-body">                                              \
+                                <div class=“row”>                                       \
+                                        <h5 class="card-title">'+new_data.nombre+'</h5>        \
+                                        <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
+                                    </div>                                                               \
+                                </div>                                      \
+                            </div>                                                                   \
+                        ');
+                        }
+                    }),   
+                    console.log(); 
                 }
                 else{//izq
-                    $("#chat_cliente").append('                                                     \
-                    <div class="card" style="width: 18rem;">                                               \
-                        <div class="card-body">                                              \
-                            <h5 class="card-title">izquierda de cliente para tecnico '+data.mensajeria[i].destinatario+'</h5>        \
-                            <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
-                        </div>                                                               \
-                    </div>                                                                   \
-                ');
+                    $.ajax({
+                        type: "GET",
+                        url: "http://localhost:8000/v1/cliente/cliente?id="+data.mensajeria[i].cliente,
+                        success: function(new_data) {
+                            $("#chat_cliente").append('                                                     \
+                            <div class="card" style="width: 18rem;">                                               \
+                                <div class="card-body">                                              \
+                                    <h5 class="card-title">'+new_data.nombre+'</h5>        \
+                                    <p class="card-text">Mensaje: '+ data.mensajeria[i].mensaje+'</p>    \                       \
+                                </div>                                                               \
+                            </div>                                                                   \
+                        ');
+                        }
+                    }),
+                    console.log();
                 }
         }
             
