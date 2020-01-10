@@ -14,7 +14,7 @@ $(document).ready(function() {
                         $("#mis_consultas").append('                                                     \
                         <div class="card" style="width: 18rem;">                                                       \
                             <div class="card-body">                                              \
-                                <h5 class="card-title">Consulta '+data[i].consulta[j].titulo+'</h5>         \
+                                <h5 class="card-title">'+data[i].consulta[j].titulo+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].consulta[j].categoria +'</h6>    \
                                 <p class="card-text">Descripción: '+ data[i].consulta[j].descripcion +'</p>    \
                                 <a href="#" id="entrar_chat" class="btn btn-info" onclick="myFunction('+data[i].consulta[j].id+')">Entrar al Chat</a>                        \
