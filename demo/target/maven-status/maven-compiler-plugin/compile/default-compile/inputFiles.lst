@@ -1,25 +1,25 @@
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/ClienteRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/ConsultaController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/MensajeriaRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Cliente.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/MensajeriaServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/TecnicoController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/CalificacionRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/CalificacionServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/DemoApplication.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/ClienteController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Consulta.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Calificacion.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/MensajeriaController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Pago.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/ConsultaServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/ClienteServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/CalificacionController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/ConsultaRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/TecnicoRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Controladores/PagoController.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/PagoServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Servicios/TecnicoServicio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Repositorios/PagoRepositorio.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Mensajeria.java
-/mnt/c/Users/Caya/Desktop/Trabajo/trabajo/demo/src/main/java/com/example/demo/Entidades/Tecnico.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/PagoRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/MensajeriaController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Consulta.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/TecnicoRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/MensajeriaRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/ConsultaRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/TecnicoController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Pago.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Calificacion.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/MensajeriaServicio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/TecnicoServicio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/DemoApplication.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/CalificacionController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/ClienteServicio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/CalificacionServicio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/CalificacionRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Repositorios/ClienteRepositorio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/ConsultaServicio.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/ClienteController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/ConsultaController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Mensajeria.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Controladores/PagoController.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Tecnico.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Entidades/Cliente.java
+/mnt/c/Users/Lucio/Desktop/Lucio/Universidad/Análisis y Diseño de Software/proyecto/trabajo/demo/src/main/java/com/example/demo/Servicios/PagoServicio.java
