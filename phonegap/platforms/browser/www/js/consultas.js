@@ -14,7 +14,7 @@ $(document).ready(function() {
                         $("#consultas").append('                                                     \
                         <div class="card" style="width: 18rem;">                                                       \
                             <div class="card-body">                                              \
-                                <h5 class="card-title">Consulta '+data[i].titulo+' Hecha por el usuario de ID '+data[i].cliente+'</h5>         \
+                                <h5 class="card-title">'+data[i].titulo+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
                                 <p class="card-text">Descripción: '+ data[i].descripcion +'</p>    \
                                 <a href="#" id= "aceptar_consulta" class="btn btn-success text-light" data-toggle="modal" data-target="#exampleModal" onclick="myFunction('+data[i].id+')">Aceptar Consulta</a>                            \
@@ -27,7 +27,7 @@ $(document).ready(function() {
                         $("#consultas").append('                                                     \
                         <div class="card" style="width: 18rem;">                                                       \
                             <div class="card-body">                                              \
-                                <h5 class="card-title">Consulta '+data[i].titulo+' Hecha por el usuario de ID '+data[i].cliente+'</h5>         \
+                                <h5 class="card-title">'+data[i].titulo+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
                                 <p class="card-text">Descripción: '+ data[i].descripcion +'</p>    \
                                 <a href="#" id="entrar_chat" class="btn btn-info" onclick="myFunction2('+data[i].id+')">Entrar al Chat</a>                        \
