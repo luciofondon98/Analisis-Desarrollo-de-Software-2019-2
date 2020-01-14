@@ -35,6 +35,8 @@ $(document).ready(function() {
                 });
             }
             console.log("id , tecnico, cliente: "+data.id+data.tecnico+data.cliente);
+            data.mensajeria = data.mensajeria.sort((a, b) => a.id - b.id);
+
             for (let i = 0; i < data.mensajeria.length; i++){
                 if(data.mensajeria[i].destinatario == data.cliente){//der
                     $.ajax({

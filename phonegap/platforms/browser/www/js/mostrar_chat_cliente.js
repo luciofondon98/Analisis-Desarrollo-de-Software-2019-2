@@ -5,11 +5,17 @@ $(document).ready(function() {
         type: "GET",
         url: "http://localhost:8000/v1/consulta/consulta?id="+id,
         success: function(data) {
-            let id = window.localStorage.getItem("token_consulta");
+            //let id = window.localStorage.getItem("token_consulta");
             console.log("mensajeria");
             //console.log(id);
+            
+
+            
+            data.mensajeria = data.mensajeria.sort((a, b) => a.id - b.id);
+            
             for (let i = 0; i < data.mensajeria.length; i++){
                 if(data.mensajeria[i].destinatario == data.cliente){//izq
+                    
                     $.ajax({
                         type: "GET",
                         url: "http://localhost:8000/v1/tecnico/tecnico?id="+data.mensajeria[i].tecnico,
