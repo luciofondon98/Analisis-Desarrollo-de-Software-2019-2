@@ -28,7 +28,6 @@ input{
 
 
 #chat{
-    display: grid;
     justify-content: center;
     flex-wrap: wrap;
     
