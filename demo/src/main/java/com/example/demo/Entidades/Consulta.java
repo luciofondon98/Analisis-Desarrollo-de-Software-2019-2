@@ -49,6 +49,9 @@ public class Consulta {
 
     @OneToMany(mappedBy="consulta")
     private Set<Mensajeria> mensajerias;
+
+    @OneToMany(mappedBy="consulta")
+    private Set<Pago> pagos;
    
 
     
@@ -56,7 +59,7 @@ public class Consulta {
 
     }
 
-    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria , String estado,Set<Mensajeria> mensajerias) {
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria , String estado,Set<Mensajeria> mensajerias, Set<Pago> pagos) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -65,6 +68,7 @@ public class Consulta {
         this.categoria = categoria;
         this.estado = estado;
         this.mensajerias = mensajerias;
+        this.pagos = pagos;
     }
 
     public long getId(){
@@ -130,6 +134,13 @@ public class Consulta {
     
     public void setMensajeria(Set<Mensajeria> mensajerias) {
         this.mensajerias = mensajerias;
+    }
 
+    public Set<Pago> getPago() {
+        return this.pagos;
+    }
+    
+    public void setPago(Set<Pago> pagos) {
+        this.pagos = pagos;
     }
 }

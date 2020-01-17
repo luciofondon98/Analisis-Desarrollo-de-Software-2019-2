@@ -21,7 +21,7 @@ $(document).ready(function() {
                         url: "http://localhost:8000/v1/tecnico/tecnico?id="+data.mensajeria[i].tecnico,
                         success: function(new_data) {
                             $("#chat").append(` 
-                            <div class="row justify-content-end">
+                            <div class="row justify-content-start">
                             <div class="col-4">
                                 <div class="card" style="width: 18rem;">                                               \
                                       <div class="card-body">                                              \
@@ -45,7 +45,7 @@ $(document).ready(function() {
                         url: "http://localhost:8000/v1/cliente/cliente?id="+data.mensajeria[i].cliente,
                         success: function(new_data) {
                             $("#chat").append(` 
-                            <div class="row justify-content-start">
+                            <div class="row justify-content-end">
                             <div class="col-4">
                                 <div class="card" style="width: 18rem;">                                               \
                                       <div class="card-body">                                              \

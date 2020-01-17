@@ -14,7 +14,7 @@ $(document).ready(function() {
                     type: "POST",
                     url: "http://localhost:8000/v1/consulta/consulta",
                     data: JSON.stringify({"tecnico": id_tec,"cliente": data.cliente ,"titulo": data.titulo,
-                    "descripcion": data.descripcion, "estado":"pendiente", "categoria": data.categoria}),
+                    "descripcion": data.descripcion, "estado":"pendiente", "categoria": data.categoria, "pago": data.pago}),
                     contentType: "application/json",
                     dataType: "json",
                     success: function(new_data) {

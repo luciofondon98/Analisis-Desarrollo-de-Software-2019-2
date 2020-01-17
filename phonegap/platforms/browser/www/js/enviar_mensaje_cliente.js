@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
 });    
 
-
+/*
 $(document).ready(function(){
     $("#boton_enviar_mensaje_tecnico").click(function (e) {
         e.preventDefault();
@@ -73,4 +73,4 @@ $(document).ready(function(){
             }
             });
     });
-});  
+});*/  
