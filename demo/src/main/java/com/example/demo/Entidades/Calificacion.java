@@ -30,16 +30,24 @@ public class Calificacion{
     @Column(name="nota")
     int nota;
 
+    @Column(name="comentario")
+    String comentario;
+
+    @Column(name="id_consulta")
+    Long consulta;
+
 
     Calificacion(){
 
     }
 
-    public Calificacion(long id, long tecnico,long cliente,int nota) {
+    public Calificacion(long id, long tecnico,long cliente,int nota, String comentario, Long consulta) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
         this.nota = nota;
+        this.comentario = comentario;
+        this.consulta = consulta;
     }
 
     public long getId(){
@@ -74,4 +82,19 @@ public class Calificacion{
         this.nota = nota;
     }
 
+    public String getComentario(){
+        return this.comentario;
+    }
+
+    public void setComentario(String comentario) {
+        this.comentario = comentario;
+    }
+
+    public Long getConsulta(){
+        return this.consulta;
+    }
+
+    public void setConsulta(Long consulta) {
+        this.consulta = consulta;
+    }
 }

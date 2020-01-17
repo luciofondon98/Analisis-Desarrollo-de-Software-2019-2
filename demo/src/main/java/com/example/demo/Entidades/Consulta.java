@@ -53,13 +53,14 @@ public class Consulta {
     @OneToMany(mappedBy="consulta")
     private Set<Pago> pagos;
    
-
+    @OneToMany(mappedBy="consulta")
+    private Set<Calificacion> calificaciones;
     
     public Consulta(){
 
     }
 
-    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria , String estado,Set<Mensajeria> mensajerias, Set<Pago> pagos) {
+    public Consulta(long id, long tecnico, long cliente, String titulo, String descripcion, String categoria , String estado,Set<Mensajeria> mensajerias, Set<Pago> pagos, Set<Calificacion> calificaciones) {
         this.id = id;
         this.tecnico = tecnico;
         this.cliente = cliente;
@@ -69,6 +70,7 @@ public class Consulta {
         this.estado = estado;
         this.mensajerias = mensajerias;
         this.pagos = pagos;
+        this.calificaciones = calificaciones;
     }
 
     public long getId(){
@@ -142,5 +144,13 @@ public class Consulta {
     
     public void setPago(Set<Pago> pagos) {
         this.pagos = pagos;
+    }
+
+    public Set<Calificacion> getCalificacion() {
+        return this.calificaciones;
+    }
+    
+    public void setCalificacion(Set<Calificacion> calificaciones) {
+        this.calificaciones = calificaciones;
     }
 }

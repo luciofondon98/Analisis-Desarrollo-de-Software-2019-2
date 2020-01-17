@@ -39,6 +39,7 @@ function myFunction() { // Declare a function
                 dataType: "json",
                 success: function(new_data) {
                     console.log("Pago realizado");
+                    window.location =  "calificacion.html";
                 },
                 error: function() {
                     console.log("No se ha podido obtener la información");

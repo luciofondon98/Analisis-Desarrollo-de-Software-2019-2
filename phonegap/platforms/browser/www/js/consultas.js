@@ -13,6 +13,7 @@ $(document).ready(function() {
                     if(data[i].estado == "nuevo"){
                         $("#consultas").append('                                                     \
                         <div class="card" style="width: 18rem;">                                                       \
+                        <div class="card-header">'+data[i].estado+'</div>\
                             <div class="card-body">                                              \
                                 <h5 class="card-title">'+data[i].titulo+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
@@ -26,6 +27,7 @@ $(document).ready(function() {
                     else if(data[i].estado == "pendiente" && data[i].tecnico == id){
                         $("#consultas").append('                                                     \
                         <div class="card" style="width: 18rem;">                                                       \
+                        <div class="card-header">'+data[i].estado+'</div>\
                             <div class="card-body">                                              \
                                 <h5 class="card-title">'+data[i].titulo+'</h5>         \
                                 <h6 class="card-subtitle mb-2 text-muted">Categoria: '+ data[i].categoria +'</h6>    \
