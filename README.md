@@ -1,4 +1,6 @@
-# LOAP Controlador-Modelo
+# LOAP
+
+Proyecto realizado el segundo semestre 2019 para la Universidad Técnica Federico Santa María. Corresponde a una aplicación movil realizada en PhoneGap y Spring Boot.
 
 1. [Integrantes](#integrant)
 2. [Ejecución](#comand)
